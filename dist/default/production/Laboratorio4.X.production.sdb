@@ -37,8 +37,6 @@
 [v _main main `(v  1 e 1 0 ]
 "59 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\LibLCDXC8.h
 [v _EnviaDato EnviaDato `(v  1 e 1 0 ]
-"71
-[v _InicializaLCD InicializaLCD `(v  1 e 1 0 ]
 "105
 [v _HabilitaLCD HabilitaLCD `(v  1 e 1 0 ]
 "112
@@ -47,120 +45,14 @@
 [v _CursorAInicio CursorAInicio `(v  1 e 1 0 ]
 "136
 [v _EscribeLCD_c EscribeLCD_c `(v  1 e 1 0 ]
-"145
-[v _EscribeLCD_n8 EscribeLCD_n8 `(v  1 e 1 0 ]
-"238
-[v _DireccionaLCD DireccionaLCD `(v  1 e 1 0 ]
 "274
 [v _RetardoLCD RetardoLCD `(v  1 e 1 0 ]
 "3264 C:\Program Files\Microchip\xc8\v2.40\pic\include\proc\pic18f4550.h
 [v _LATD LATD `VEuc  1 e 1 @3980 ]
-"4002
-[v _TRISD TRISD `VEuc  1 e 1 @3989 ]
-"4224
-[v _TRISE TRISE `VEuc  1 e 1 @3990 ]
-"6582
-[v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
 "10016
 [v _LATE0 LATE0 `VEb  1 e 0 @31848 ]
-"10019
-[v _LATE1 LATE1 `VEb  1 e 0 @31849 ]
 "7 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\Laboratorio4.c
 [v _main main `(v  1 e 1 0 ]
 {
-"32
-} 0
-"71 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\LibLCDXC8.h
-[v _InicializaLCD InicializaLCD `(v  1 e 1 0 ]
-{
-"104
-} 0
-"112
-[v _BorraLCD BorraLCD `(v  1 e 1 0 ]
-{
-"118
-} 0
-"145
-[v _EscribeLCD_n8 EscribeLCD_n8 `(v  1 e 1 0 ]
-{
-[v EscribeLCD_n8@a a `uc  1 a 1 wreg ]
-"150
-[v EscribeLCD_n8@unidad unidad `uc  1 a 1 11 ]
-[v EscribeLCD_n8@decena decena `uc  1 a 1 10 ]
-[v EscribeLCD_n8@centena centena `uc  1 a 1 9 ]
-"145
-[v EscribeLCD_n8@a a `uc  1 a 1 wreg ]
-[v EscribeLCD_n8@b b `uc  1 p 1 8 ]
-"151
-[v EscribeLCD_n8@a a `uc  1 a 1 12 ]
-"182
-} 0
-"4 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lbmod.c
-[v ___lbmod __lbmod `(uc  1 e 1 0 ]
-{
-[v ___lbmod@dividend dividend `uc  1 a 1 wreg ]
-"6
-[v ___lbmod@rem rem `uc  1 a 1 3 ]
-"7
-[v ___lbmod@counter counter `uc  1 a 1 2 ]
-"4
-[v ___lbmod@dividend dividend `uc  1 a 1 wreg ]
-[v ___lbmod@divisor divisor `uc  1 p 1 0 ]
 "9
-[v ___lbmod@dividend dividend `uc  1 a 1 1 ]
-"18
-} 0
-"4 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lbdiv.c
-[v ___lbdiv __lbdiv `(uc  1 e 1 0 ]
-{
-[v ___lbdiv@dividend dividend `uc  1 a 1 wreg ]
-"6
-[v ___lbdiv@quotient quotient `uc  1 a 1 7 ]
-"7
-[v ___lbdiv@counter counter `uc  1 a 1 6 ]
-"4
-[v ___lbdiv@dividend dividend `uc  1 a 1 wreg ]
-[v ___lbdiv@divisor divisor `uc  1 p 1 4 ]
-"9
-[v ___lbdiv@dividend dividend `uc  1 a 1 5 ]
-"26
-} 0
-"136 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\LibLCDXC8.h
-[v _EscribeLCD_c EscribeLCD_c `(v  1 e 1 0 ]
-{
-[v EscribeLCD_c@a a `uc  1 a 1 wreg ]
-[v EscribeLCD_c@a a `uc  1 a 1 wreg ]
-"140
-[v EscribeLCD_c@a a `uc  1 a 1 3 ]
-"144
-} 0
-"238
-[v _DireccionaLCD DireccionaLCD `(v  1 e 1 0 ]
-{
-[v DireccionaLCD@a a `uc  1 a 1 wreg ]
-[v DireccionaLCD@a a `uc  1 a 1 wreg ]
-"241
-[v DireccionaLCD@a a `uc  1 a 1 3 ]
-"245
-} 0
-"59
-[v _EnviaDato EnviaDato `(v  1 e 1 0 ]
-{
-[v EnviaDato@a a `uc  1 a 1 wreg ]
-[v EnviaDato@a a `uc  1 a 1 wreg ]
-[v EnviaDato@a a `uc  1 a 1 2 ]
-"70
-} 0
-"274
-[v _RetardoLCD RetardoLCD `(v  1 e 1 0 ]
-{
-[v RetardoLCD@a a `uc  1 a 1 wreg ]
-[v RetardoLCD@a a `uc  1 a 1 wreg ]
-[v RetardoLCD@a a `uc  1 a 1 1 ]
-"292
-} 0
-"105
-[v _HabilitaLCD HabilitaLCD `(v  1 e 1 0 ]
-{
-"111
 } 0
