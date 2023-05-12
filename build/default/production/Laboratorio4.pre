@@ -5861,7 +5861,12 @@ void MensajeLCD_Var(char* a){
 
 
 
-
+for(int i = 0; i<16; i++){
+if(a[i] == NULL){
+break;
+}
+EscribeLCD_c(a[i]);
+}
 }
 void DireccionaLCD(unsigned char a){
 
@@ -5873,7 +5878,7 @@ RetardoLCD(4);
 }
 void FijaCursorLCD(unsigned char fila,unsigned char columna){
 
-# 254
+# 259
 }
 void DesplazaPantallaD(void){
 
@@ -5920,5 +5925,12 @@ break;
 #pragma config WDT=OFF
 
 void main(void){
-
+ADCON1=15;
+TRISD=0;
+TRISE=0;
+InicializaLCD();
+BorraLCD();
+MensajeLCD_Var("Hola mundo");
+while(1){
+}
 }

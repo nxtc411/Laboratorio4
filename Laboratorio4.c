@@ -5,5 +5,12 @@
 #pragma config WDT=OFF
 
 void main(void){
-    
+    ADCON1=15;
+    TRISD=0;
+    TRISE=0;
+    InicializaLCD();
+    BorraLCD();
+    MensajeLCD_Var("Hola mundo");
+    while(1){
+    }    
 }
