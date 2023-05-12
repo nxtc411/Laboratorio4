@@ -6,7 +6,7 @@
 
 void main(void){
     ADCON1=15;
-    
+    //Oa :D
     TRISD=0;
     
     TRISE=0;
