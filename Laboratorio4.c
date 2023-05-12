@@ -10,7 +10,7 @@ void main(void){
     TRISD=0;
     
     TRISE=0;
-    
+    //oa guapo
     InicializaLCD();
     
     BorraLCD();
