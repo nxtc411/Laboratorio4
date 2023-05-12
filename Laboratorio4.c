@@ -46,15 +46,8 @@ void main(void){
                     else Tecla=0;
                 }
             }
-        }   
-        LATB=0b11110000;
-        for(i=0;i<Tecla;i++){
-            LATD0=1;
-            __delay_ms(400);
-            LATD0=0;
-            __delay_ms(400);
         }
-        Tecla=0;
+        
     }
 }
 
