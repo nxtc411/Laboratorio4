@@ -40,17 +40,17 @@ void EnviaDato(unsigned char);
 void InicializaLCD(void);
 void HabilitaLCD(void);
 void BorraLCD(void);
-void CursorAInicio(void);
-void ComandoLCD(unsigned char);
+//void CursorAInicio(void);
+//void ComandoLCD(unsigned char);
 void EscribeLCD_c(unsigned char);
-void EscribeLCD_n8(unsigned char, unsigned char);
-void EscribeLCD_n16(unsigned int, unsigned char);
-void EscribeLCD_d(double, unsigned char, unsigned char);
-void MensajeLCD_Var(char *);
+//void EscribeLCD_n8(unsigned char, unsigned char);
+//void EscribeLCD_n16(unsigned int, unsigned char);
+//void EscribeLCD_d(double, unsigned char, unsigned char);
+void MensajeLCD_Word(char *);
 void DireccionaLCD(unsigned char);
-void FijaCursorLCD(unsigned char,unsigned char);
-void DesplazaPantallaD(void);
-void DesplazaPantallaI(void);
+//void FijaCursorLCD(unsigned char,unsigned char);
+//void DesplazaPantallaD(void);
+//void DesplazaPantallaI(void);
 
 void ConfiguraLCD(unsigned char a){
 	if(a==4 | a ==8)
@@ -116,10 +116,13 @@ void BorraLCD(void){
 	HabilitaLCD();
 	RetardoLCD(2);
 }
+/*
 void CursorAInicio(){
 //Función que lleva el cursor a la primera posición o la de la
-//primera línea mas a la izquierda	
-}	
+//primera línea mas a la izquierda
+DireccionaLCD(0x80);	
+}
+
 void ComandoLCD(unsigned char a){
 //Función que envia cualquier comando al LCD
 	RS=0;
@@ -132,7 +135,8 @@ void ComandoLCD(unsigned char a){
 		HabilitaLCD();
 		RetardoLCD(4);
 	}		
-}	
+}
+*/	
 void EscribeLCD_c(unsigned char a){
 //Función que escribe un caracter en la pantalla
 //a es un valor en codigo ascii
@@ -142,6 +146,7 @@ void EscribeLCD_c(unsigned char a){
 	HabilitaLCD();
 	RetardoLCD(4);
 }
+/*
 void EscribeLCD_n8(unsigned char a,unsigned char b){
 //Función que escribe un número positivo de 8 bits en la pantalla
 //a es el número a escribir, el cual debe estar en el rango de 0 a 255
@@ -229,17 +234,17 @@ void EscribeLCD_n16(unsigned int a,unsigned char b){
 void EscribeLCD_d(double num, unsigned char digi, unsigned char digd){
 	
 }
-void MensajeLCD_Var(char* a){
+ */
+
+void MensajeLCD_Word(char* a){
 //Función que escribe una cadena de caracteres variable en la pantalla
 //a es una cadena de caracteres guardada en una variable *char
 //Ejemplo: char aux[4]="Hola"; MensajeLCD_Var(aux);
-    for(int i = 0; i<16; i++){
-        if(a[i] == NULL){
-        break;
-        }
+      for(int i = 0; i<16; i++){
         EscribeLCD_c(a[i]);
     }
 }
+    
 void DireccionaLCD(unsigned char a){
 //Función que ubica el cursor en una posición especificada
 //a debe ser una dirección de 8 bits valida de la DDRAM o la CGRAM	
@@ -248,6 +253,7 @@ void DireccionaLCD(unsigned char a){
 	HabilitaLCD();
 	RetardoLCD(4);
 }
+/*
 void FijaCursorLCD(unsigned char fila,unsigned char columna){
 //Función que ubica el cursor en una fila y columna especificadas
 //fila es un valor positivo que especifica la posición del cursor de 1 a 4
@@ -259,10 +265,7 @@ void FijaCursorLCD(unsigned char fila,unsigned char columna){
 }
 void DesplazaPantallaD(void){
 //Función que desplaza una sola vez la pantalla a la derecha	
-  RS=0;
-  EnviaDato(8);
-  HabilitaLCD();
-  RetardoLCD(4);	
+	
 }
 void DesplazaPantallaI(void){
 //Función que desplaza una sola vez la pantalla a la izquierda
@@ -275,7 +278,9 @@ void DesplazaCursorD(void){
 void DesplazaCursorI(void){
 //Función que desplaza una sola vez la pantalla a la izquierda
 	
-}		
+}
+ */
+
 void RetardoLCD(unsigned char a){
 	switch(a){
 		case 1: __delay_ms(15);
