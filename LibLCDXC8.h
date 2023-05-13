@@ -146,7 +146,7 @@ void EscribeLCD_c(unsigned char a){
 	HabilitaLCD();
 	RetardoLCD(4);
 }
-/*
+
 void EscribeLCD_n8(unsigned char a,unsigned char b){
 //Función que escribe un número positivo de 8 bits en la pantalla
 //a es el número a escribir, el cual debe estar en el rango de 0 a 255
@@ -231,6 +231,8 @@ void EscribeLCD_n16(unsigned int a,unsigned char b){
 		default: break;
 	}	
 }
+
+/*
 void EscribeLCD_d(double num, unsigned char digi, unsigned char digd){
 	
 }

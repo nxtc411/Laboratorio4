@@ -8,6 +8,7 @@ unsigned char Tecla = 0;
 unsigned long r = 0;
 unsigned int n1 = 0;
 unsigned int n2 = 0;
+unsigned int i = 0;
 unsigned char op = ' ';
 unsigned char n1c = ' ';
 unsigned char n2c = ' ';
@@ -28,17 +29,41 @@ void main(void){
         LATB=0B00000000;
         Tecla = LeerTeclado();
         if(Tecla=='C'){
-            DireccionaLCD(0xC0);
+            op = ' ';
+            n1c = ' ';
+            n2c = ' ';
+            n1 = 0;
+            n2 = 0;
+            i = 0;
+            DireccionaLCD(0x80);
             MensajeLCD_Word("                ");
-            DireccionaLCD(0xC0);
+            DireccionaLCD(0x80);
         }else{
             if(n1c==' '|n2c==' '|op==' '){
                 if(op==' ' & (Tecla=='+'|Tecla=='-'|Tecla=='/'|Tecla=='x')){
+                DireccionaLCD(0x81);
                 EscribeLCD_c(Tecla);
                 op = Tecla;
                 }else{
-                    if(Tecla=='='){
-                        if(n1c!=' ' & n2c!=' ' & op==' '){
+                    if(n1c==' '){
+                        DireccionaLCD(0x80);  
+                        EscribeLCD_c(Tecla);
+                        n1c=Tecla;
+                        n1 = Tecla-'0';
+                    }else{
+                        if(n2c==' ' & op!=' '){
+                            DireccionaLCD(0x82);
+                            EscribeLCD_c(Tecla);
+                            n2c=Tecla;
+                            n2 = Tecla-'0';
+                        }
+                    }
+                    
+                }
+        }else{
+           if(Tecla=='='){
+                        if(n1c!=' ' & n2c!=' ' & op!=' '){
+                            DireccionaLCD(0x83);
                             EscribeLCD_c('=');
                             switch(op){
                             case '+': r = n1 + n2;
@@ -47,26 +72,53 @@ void main(void){
                                 break; 
                             case 'x': r = n1*n2;
                                 break;
-                            case '/': r = n1/n2;
+                            case '/': 
+                                if(n2!=0){
+                                    if(n1!=0){
+                                    r = n1/n2;
+                                }
+                                }else{
+                                    if(n1 != 0 & n2 == 0) r = 1000;
+                                    else if(n1 == 0 & n2 == 0) r = 1001;
+                                }
                                 break;
                             default:
                                 r = 0;
                                 break;
-                            }         
-                            EscribeLCD_c(r+'0');
+                            }
+                            DireccionaLCD(0x84);
+                            if(r>0x51 & r!=1000 & r !=1001){
+                                EscribeLCD_c('-');
+                                DireccionaLCD(0x85);
+                                r = ~r+1;
+                                EscribeLCD_c(r+'0'); 
+                            }else{
+                                if(r>0xA & r!=1000 & r !=1001){
+                                    do{
+                                        i = i+1;
+                                        r = r - 10;
+                                    }while(r>0xA);
+                                    EscribeLCD_c(i+'0');
+                                    DireccionaLCD(0x85);
+                                    EscribeLCD_c(r+'0'); 
+                                }else{
+                                    if(r==1000){
+                                            EscribeLCD_c('I');
+                                            EscribeLCD_c('N');
+                                            EscribeLCD_c('F');
+                                    }else{
+                                        if(r=1001){
+                                            EscribeLCD_c('I');
+                                            EscribeLCD_c('N');
+                                            EscribeLCD_c('D');
+                                        }else{
+                                            EscribeLCD_c(r+'0'); 
+                                        }
+                                    }
+                                }
+                            }
                         }
-                    }else{
-                        if(n1c==' '){
-                        EscribeLCD_c(Tecla);
-                        n1c=Tecla;
-                        n1 = Tecla-'0';
-                    }else{
-                        EscribeLCD_c(Tecla);
-                        n2c=Tecla;
-                        n2 = Tecla-'0';
-                    }
-                    }
-                }
+                    }     
         }
         __delay_ms(700);
     }
