@@ -5,7 +5,8 @@
 #pragma config WDT=OFF
 
 unsigned char Tecla = 0;
-unsigned long r = 0;
+unsigned int r = 0;
+float d = 0;
 unsigned int n1 = 0;
 unsigned int n2 = 0;
 unsigned int i = 0;
@@ -13,6 +14,8 @@ unsigned char op = ' ';
 unsigned char n1c = ' ';
 unsigned char n2c = ' ';
 unsigned char LeerTeclado(void);
+void Imprimir(unsigned char);
+void Borrar(void);
 
 void main(void){
     ADCON1=15;
@@ -22,46 +25,56 @@ void main(void){
     RBPU=0;
     InicializaLCD();
     BorraLCD();
-    MensajeLCD_Word("Hola mundo");
+    MensajeLCD_Word("Hola mundo");    
     __delay_ms(2000);
-    BorraLCD();
+    Borrar();
     while(1){
         LATB=0B00000000;
         Tecla = LeerTeclado();
-        if(Tecla=='C'){
+        __delay_ms(50);
+        Imprimir(Tecla);
+    }}
+
+
+void Borrar(void){
+    DireccionaLCD(0x80);
+    MensajeLCD_Word("                ");
+    DireccionaLCD(0x80);
+}
+
+void Imprimir(unsigned char Valor){
+    if(Valor=='C'){
             op = ' ';
             n1c = ' ';
             n2c = ' ';
             n1 = 0;
             n2 = 0;
             i = 0;
-            DireccionaLCD(0x80);
-            MensajeLCD_Word("                ");
-            DireccionaLCD(0x80);
+            Borrar();
         }else{
             if(n1c==' '|n2c==' '|op==' '){
-                if(op==' ' & (Tecla=='+'|Tecla=='-'|Tecla=='/'|Tecla=='x')){
+                if(op==' ' & (Valor=='+'|Valor=='-'|Valor=='/'|Valor=='x')){
                 DireccionaLCD(0x81);
-                EscribeLCD_c(Tecla);
-                op = Tecla;
+                EscribeLCD_c(Valor);
+                op = Valor;
                 }else{
                     if(n1c==' '){
                         DireccionaLCD(0x80);  
-                        EscribeLCD_c(Tecla);
-                        n1c=Tecla;
-                        n1 = Tecla-'0';
+                        EscribeLCD_c(Valor);
+                        n1c=Valor;
+                        n1 = Valor-'0';
                     }else{
                         if(n2c==' ' & op!=' '){
                             DireccionaLCD(0x82);
-                            EscribeLCD_c(Tecla);
-                            n2c=Tecla;
-                            n2 = Tecla-'0';
+                            EscribeLCD_c(Valor);
+                            n2c=Valor;
+                            n2 = Valor-'0';
                         }
                     }
                     
                 }
         }else{
-           if(Tecla=='='){
+           if(Valor=='='){
                         if(n1c!=' ' & n2c!=' ' & op!=' '){
                             DireccionaLCD(0x83);
                             EscribeLCD_c('=');
@@ -75,7 +88,7 @@ void main(void){
                             case '/': 
                                 if(n2!=0){
                                     if(n1!=0){
-                                    r = n1/n2;
+                                    d = (float) n1/ (float) n2;
                                 }
                                 }else{
                                     if(n1 != 0 & n2 == 0) r = 1000;
@@ -112,7 +125,8 @@ void main(void){
                                             EscribeLCD_c('N');
                                             EscribeLCD_c('D');
                                         }else{
-                                            EscribeLCD_c(r+'0'); 
+                                            if(d!=0) EscribeLCD_c(r+'0'); 
+                                            else EscribeLCD_n8(d,2);
                                         }
                                     }
                                 }
@@ -120,9 +134,7 @@ void main(void){
                         }
                     }     
         }
-        __delay_ms(700);
-    }
-    }}
+        }}
 
 unsigned char LeerTeclado(void){
     while(RB4==1 && RB5==1 && RB6==1 && RB7==1);//se bloquea al micro mientras no se oprima algún botón 
