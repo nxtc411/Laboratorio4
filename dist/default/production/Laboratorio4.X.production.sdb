@@ -13,18 +13,8 @@
 [v ___ftmul __ftmul `(f  1 e 3 0 ]
 "19 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\ftsub.c
 [v ___ftsub __ftsub `(f  1 e 3 0 ]
-"44 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\fttol.c
-[v ___fttol __fttol `(l  1 e 4 0 ]
-"4 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lbdiv.c
-[v ___lbdiv __lbdiv `(uc  1 e 1 0 ]
-"4 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lbmod.c
-[v ___lbmod __lbmod `(uc  1 e 1 0 ]
 "7 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
-"7 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lwmod.c
-[v ___lwmod __lwmod `(ui  1 e 2 0 ]
-"28 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lwtoft.c
-[v ___lwtoft __lwtoft `(f  1 e 3 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 3 0 ]
 "245
@@ -39,13 +29,9 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul64.c
 [v ___omul __omul `(ul  1 e 4 0 ]
-"20 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\Laboratorio4.c
+"17 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\Laboratorio4.c
 [v _main main `(v  1 e 1 0 ]
-"39
-[v _Borrar Borrar `(v  1 e 1 0 ]
-"45
-[v _Imprimir Imprimir `(v  1 e 1 0 ]
-"139
+"145
 [v _LeerTeclado LeerTeclado `(uc  1 e 1 0 ]
 "59 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\LibLCDXC8.h
 [v _EnviaDato EnviaDato `(v  1 e 1 0 ]
@@ -57,13 +43,11 @@
 [v _BorraLCD BorraLCD `(v  1 e 1 0 ]
 "140
 [v _EscribeLCD_c EscribeLCD_c `(v  1 e 1 0 ]
-"150
-[v _EscribeLCD_n8 EscribeLCD_n8 `(v  1 e 1 0 ]
-"241
+"239
 [v _MensajeLCD_Word MensajeLCD_Word `(v  1 e 1 0 ]
-"252
+"250
 [v _DireccionaLCD DireccionaLCD `(v  1 e 1 0 ]
-"288
+"286
 [v _RetardoLCD RetardoLCD `(v  1 e 1 0 ]
 "3074 C:\Program Files\Microchip\xc8\v2.40\pic\include\proc\pic18f4550.h
 [v _LATB LATB `VEuc  1 e 1 @3978 ]
@@ -94,48 +78,23 @@
 "7 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\Laboratorio4.c
 [v _Tecla Tecla `uc  1 e 1 0 ]
 "8
-[v _r r `ui  1 e 2 0 ]
+[v _r r `ul  1 e 4 0 ]
 "9
-[v _d d `f  1 e 3 0 ]
-"10
 [v _n1 n1 `ui  1 e 2 0 ]
-"11
+"10
 [v _n2 n2 `ui  1 e 2 0 ]
-"12
+"11
 [v _i i `ui  1 e 2 0 ]
-"13
+"12
 [v _op op `uc  1 e 1 0 ]
-"14
+"13
 [v _n1c n1c `uc  1 e 1 0 ]
-"15
+"14
 [v _n2c n2c `uc  1 e 1 0 ]
-"20
+"17
 [v _main main `(v  1 e 1 0 ]
 {
-"36
-} 0
-"139
-[v _LeerTeclado LeerTeclado `(uc  1 e 1 0 ]
-{
-"166
-} 0
-"71 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\LibLCDXC8.h
-[v _InicializaLCD InicializaLCD `(v  1 e 1 0 ]
-{
-"104
-} 0
-"112
-[v _BorraLCD BorraLCD `(v  1 e 1 0 ]
-{
-"118
-} 0
-"45 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\Laboratorio4.c
-[v _Imprimir Imprimir `(v  1 e 1 0 ]
-{
-[v Imprimir@Valor Valor `uc  1 a 1 wreg ]
-[v Imprimir@Valor Valor `uc  1 a 1 wreg ]
-[v Imprimir@Valor Valor `uc  1 a 1 26 ]
-"137
+"143
 } 0
 "15 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
@@ -147,104 +106,26 @@
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
 "53
 } 0
-"28 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lwtoft.c
-[v ___lwtoft __lwtoft `(f  1 e 3 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 {
-[v ___lwtoft@c c `ui  1 p 2 8 ]
-"31
-} 0
-"44 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\fttol.c
-[v ___fttol __fttol `(l  1 e 4 0 ]
-{
-"47
-[v ___fttol@lval lval `ul  1 a 4 10 ]
-"46
-[v ___fttol@exp1 exp1 `uc  1 a 1 14 ]
-[v ___fttol@sign1 sign1 `uc  1 a 1 9 ]
-"44
-[v ___fttol@f1 f1 `f  1 p 3 0 ]
-"73
-} 0
-"54 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\ftdiv.c
-[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
-{
-"60
-[v ___ftdiv@f3 f3 `f  1 a 3 21 ]
-"59
-[v ___ftdiv@sign sign `uc  1 a 1 25 ]
-[v ___ftdiv@exp exp `uc  1 a 1 24 ]
-[v ___ftdiv@cntr cntr `uc  1 a 1 20 ]
-"54
-[v ___ftdiv@f1 f1 `f  1 p 3 11 ]
-[v ___ftdiv@f2 f2 `f  1 p 3 14 ]
-"86
-} 0
-"62 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\float.c
-[v ___ftpack __ftpack `(f  1 e 3 0 ]
-{
-[v ___ftpack@arg arg `um  1 p 3 0 ]
-[v ___ftpack@exp exp `uc  1 p 1 3 ]
-[v ___ftpack@sign sign `uc  1 p 1 4 ]
-"86
-} 0
-"150 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\LibLCDXC8.h
-[v _EscribeLCD_n8 EscribeLCD_n8 `(v  1 e 1 0 ]
-{
-[v EscribeLCD_n8@a a `uc  1 a 1 wreg ]
-"155
-[v EscribeLCD_n8@unidad unidad `uc  1 a 1 18 ]
-[v EscribeLCD_n8@decena decena `uc  1 a 1 17 ]
-[v EscribeLCD_n8@centena centena `uc  1 a 1 16 ]
-"150
-[v EscribeLCD_n8@a a `uc  1 a 1 wreg ]
-[v EscribeLCD_n8@b b `uc  1 p 1 15 ]
-"156
-[v EscribeLCD_n8@a a `uc  1 a 1 19 ]
-"187
-} 0
-"4 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lbmod.c
-[v ___lbmod __lbmod `(uc  1 e 1 0 ]
-{
-[v ___lbmod@dividend dividend `uc  1 a 1 wreg ]
-"6
-[v ___lbmod@rem rem `uc  1 a 1 3 ]
+"10
+[v ___lwdiv@quotient quotient `ui  1 a 2 4 ]
+"11
+[v ___lwdiv@counter counter `uc  1 a 1 6 ]
 "7
-[v ___lbmod@counter counter `uc  1 a 1 2 ]
-"4
-[v ___lbmod@dividend dividend `uc  1 a 1 wreg ]
-[v ___lbmod@divisor divisor `uc  1 p 1 0 ]
-"9
-[v ___lbmod@dividend dividend `uc  1 a 1 1 ]
-"18
+[v ___lwdiv@dividend dividend `ui  1 p 2 0 ]
+[v ___lwdiv@divisor divisor `ui  1 p 2 2 ]
+"30
 } 0
-"4 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lbdiv.c
-[v ___lbdiv __lbdiv `(uc  1 e 1 0 ]
-{
-[v ___lbdiv@dividend dividend `uc  1 a 1 wreg ]
-"6
-[v ___lbdiv@quotient quotient `uc  1 a 1 7 ]
-"7
-[v ___lbdiv@counter counter `uc  1 a 1 6 ]
-"4
-[v ___lbdiv@dividend dividend `uc  1 a 1 wreg ]
-[v ___lbdiv@divisor divisor `uc  1 p 1 4 ]
-"9
-[v ___lbdiv@dividend dividend `uc  1 a 1 5 ]
-"26
-} 0
-"39 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\Laboratorio4.c
-[v _Borrar Borrar `(v  1 e 1 0 ]
-{
-"43
-} 0
-"241 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\LibLCDXC8.h
+"239 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\LibLCDXC8.h
 [v _MensajeLCD_Word MensajeLCD_Word `(v  1 e 1 0 ]
 {
-"245
+"243
 [v MensajeLCD_Word@i i `i  1 a 2 6 ]
-"241
+"239
 [v MensajeLCD_Word@a a `*.31uc  1 p 1 4 ]
-"250
+"248
 } 0
 "140
 [v _EscribeLCD_c EscribeLCD_c `(v  1 e 1 0 ]
@@ -255,14 +136,29 @@
 [v EscribeLCD_c@a a `uc  1 a 1 3 ]
 "148
 } 0
-"252
+"145 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\Laboratorio4.c
+[v _LeerTeclado LeerTeclado `(uc  1 e 1 0 ]
+{
+"172
+} 0
+"71 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\LibLCDXC8.h
+[v _InicializaLCD InicializaLCD `(v  1 e 1 0 ]
+{
+"104
+} 0
+"112
+[v _BorraLCD BorraLCD `(v  1 e 1 0 ]
+{
+"118
+} 0
+"250
 [v _DireccionaLCD DireccionaLCD `(v  1 e 1 0 ]
 {
 [v DireccionaLCD@a a `uc  1 a 1 wreg ]
 [v DireccionaLCD@a a `uc  1 a 1 wreg ]
-"255
+"253
 [v DireccionaLCD@a a `uc  1 a 1 3 ]
-"259
+"257
 } 0
 "59
 [v _EnviaDato EnviaDato `(v  1 e 1 0 ]
@@ -272,13 +168,13 @@
 [v EnviaDato@a a `uc  1 a 1 2 ]
 "70
 } 0
-"288
+"286
 [v _RetardoLCD RetardoLCD `(v  1 e 1 0 ]
 {
 [v RetardoLCD@a a `uc  1 a 1 wreg ]
 [v RetardoLCD@a a `uc  1 a 1 wreg ]
 [v RetardoLCD@a a `uc  1 a 1 1 ]
-"306
+"304
 } 0
 "105
 [v _HabilitaLCD HabilitaLCD `(v  1 e 1 0 ]
