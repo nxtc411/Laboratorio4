@@ -11,10 +11,6 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\Andres\AppData\Local\Temp\xcAsfcs.obj
-idloc IDLOC 5 200000 200000 8 1 1
-init CODE 0 0 0 4 1 2
-config CONFIG 4 300000 300000 E 1 1
 $dist/default/production\Laboratorio4.X.production.obj
 cinit CODE 0 1060 1060 36 1 2
 idloc IDLOC 5 200000 200000 8 1 1
@@ -43,6 +39,10 @@ cstackCOMRAM COMRAM 1 1 1 1D 1 1
 smallconst SMALLCONST 0 800 800 1E 1 2
 dataCOMRAM COMRAM 1 2A 2A 4 1 1
 bssCOMRAM COMRAM 1 1E 1E C 1 1
+config CONFIG 4 300000 300000 E 1 1
+$C:\Users\Andres\AppData\Local\Temp\xcAs2sg.obj
+idloc IDLOC 5 200000 200000 8 1 1
+init CODE 0 0 0 4 1 2
 config CONFIG 4 300000 300000 E 1 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -402,34 +402,34 @@ F1E text0 CODE >32:C:\Users\Andres\MPLABXProjects\Laboratorio4.X\Laboratorio4.c
 F22 text0 CODE >33:C:\Users\Andres\MPLABXProjects\Laboratorio4.X\Laboratorio4.c
 F28 text0 CODE >34:C:\Users\Andres\MPLABXProjects\Laboratorio4.X\Laboratorio4.c
 F38 text0 CODE >35:C:\Users\Andres\MPLABXProjects\Laboratorio4.X\Laboratorio4.c
-1060 cinit CODE >593:C:\Users\Andres\AppData\Local\Temp\xcAsfcs.as
-1060 cinit CODE >595:C:\Users\Andres\AppData\Local\Temp\xcAsfcs.as
-1060 cinit CODE >598:C:\Users\Andres\AppData\Local\Temp\xcAsfcs.as
-1060 cinit CODE >652:C:\Users\Andres\AppData\Local\Temp\xcAsfcs.as
-1062 cinit CODE >653:C:\Users\Andres\AppData\Local\Temp\xcAsfcs.as
-1064 cinit CODE >654:C:\Users\Andres\AppData\Local\Temp\xcAsfcs.as
-1066 cinit CODE >655:C:\Users\Andres\AppData\Local\Temp\xcAsfcs.as
-1068 cinit CODE >656:C:\Users\Andres\AppData\Local\Temp\xcAsfcs.as
-106A cinit CODE >657:C:\Users\Andres\AppData\Local\Temp\xcAsfcs.as
-106C cinit CODE >658:C:\Users\Andres\AppData\Local\Temp\xcAsfcs.as
-1070 cinit CODE >659:C:\Users\Andres\AppData\Local\Temp\xcAsfcs.as
-1074 cinit CODE >660:C:\Users\Andres\AppData\Local\Temp\xcAsfcs.as
-1074 cinit CODE >661:C:\Users\Andres\AppData\Local\Temp\xcAsfcs.as
-1076 cinit CODE >662:C:\Users\Andres\AppData\Local\Temp\xcAsfcs.as
-107A cinit CODE >663:C:\Users\Andres\AppData\Local\Temp\xcAsfcs.as
-107C cinit CODE >664:C:\Users\Andres\AppData\Local\Temp\xcAsfcs.as
-107E cinit CODE >665:C:\Users\Andres\AppData\Local\Temp\xcAsfcs.as
-1080 cinit CODE >669:C:\Users\Andres\AppData\Local\Temp\xcAsfcs.as
-1084 cinit CODE >670:C:\Users\Andres\AppData\Local\Temp\xcAsfcs.as
-1086 cinit CODE >671:C:\Users\Andres\AppData\Local\Temp\xcAsfcs.as
-1086 cinit CODE >672:C:\Users\Andres\AppData\Local\Temp\xcAsfcs.as
-1088 cinit CODE >673:C:\Users\Andres\AppData\Local\Temp\xcAsfcs.as
-108A cinit CODE >674:C:\Users\Andres\AppData\Local\Temp\xcAsfcs.as
-108C cinit CODE >680:C:\Users\Andres\AppData\Local\Temp\xcAsfcs.as
-108C cinit CODE >683:C:\Users\Andres\AppData\Local\Temp\xcAsfcs.as
-108E cinit CODE >684:C:\Users\Andres\AppData\Local\Temp\xcAsfcs.as
-1090 cinit CODE >685:C:\Users\Andres\AppData\Local\Temp\xcAsfcs.as
-1092 cinit CODE >686:C:\Users\Andres\AppData\Local\Temp\xcAsfcs.as
+1060 cinit CODE >593:C:\Users\Andres\AppData\Local\Temp\xcAs2sg.as
+1060 cinit CODE >595:C:\Users\Andres\AppData\Local\Temp\xcAs2sg.as
+1060 cinit CODE >598:C:\Users\Andres\AppData\Local\Temp\xcAs2sg.as
+1060 cinit CODE >652:C:\Users\Andres\AppData\Local\Temp\xcAs2sg.as
+1062 cinit CODE >653:C:\Users\Andres\AppData\Local\Temp\xcAs2sg.as
+1064 cinit CODE >654:C:\Users\Andres\AppData\Local\Temp\xcAs2sg.as
+1066 cinit CODE >655:C:\Users\Andres\AppData\Local\Temp\xcAs2sg.as
+1068 cinit CODE >656:C:\Users\Andres\AppData\Local\Temp\xcAs2sg.as
+106A cinit CODE >657:C:\Users\Andres\AppData\Local\Temp\xcAs2sg.as
+106C cinit CODE >658:C:\Users\Andres\AppData\Local\Temp\xcAs2sg.as
+1070 cinit CODE >659:C:\Users\Andres\AppData\Local\Temp\xcAs2sg.as
+1074 cinit CODE >660:C:\Users\Andres\AppData\Local\Temp\xcAs2sg.as
+1074 cinit CODE >661:C:\Users\Andres\AppData\Local\Temp\xcAs2sg.as
+1076 cinit CODE >662:C:\Users\Andres\AppData\Local\Temp\xcAs2sg.as
+107A cinit CODE >663:C:\Users\Andres\AppData\Local\Temp\xcAs2sg.as
+107C cinit CODE >664:C:\Users\Andres\AppData\Local\Temp\xcAs2sg.as
+107E cinit CODE >665:C:\Users\Andres\AppData\Local\Temp\xcAs2sg.as
+1080 cinit CODE >669:C:\Users\Andres\AppData\Local\Temp\xcAs2sg.as
+1084 cinit CODE >670:C:\Users\Andres\AppData\Local\Temp\xcAs2sg.as
+1086 cinit CODE >671:C:\Users\Andres\AppData\Local\Temp\xcAs2sg.as
+1086 cinit CODE >672:C:\Users\Andres\AppData\Local\Temp\xcAs2sg.as
+1088 cinit CODE >673:C:\Users\Andres\AppData\Local\Temp\xcAs2sg.as
+108A cinit CODE >674:C:\Users\Andres\AppData\Local\Temp\xcAs2sg.as
+108C cinit CODE >680:C:\Users\Andres\AppData\Local\Temp\xcAs2sg.as
+108C cinit CODE >683:C:\Users\Andres\AppData\Local\Temp\xcAs2sg.as
+108E cinit CODE >684:C:\Users\Andres\AppData\Local\Temp\xcAs2sg.as
+1090 cinit CODE >685:C:\Users\Andres\AppData\Local\Temp\xcAs2sg.as
+1092 cinit CODE >686:C:\Users\Andres\AppData\Local\Temp\xcAs2sg.as
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -456,7 +456,7 @@ MensajeLCD_Word@a 5 0 COMRAM 1 cstackCOMRAM dist/default/production\Laboratorio4
 MensajeLCD_Word@i 7 0 COMRAM 1 cstackCOMRAM dist/default/production\Laboratorio4.X.production.obj
 ___ftdiv@exp 19 0 COMRAM 1 cstackCOMRAM dist/default/production\Laboratorio4.X.production.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\Laboratorio4.X.production.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\Andres\AppData\Local\Temp\xcAsfcs.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\Andres\AppData\Local\Temp\xcAs2sg.obj
 __end_of_EnviaDato 1176 0 CODE 0 text17 dist/default/production\Laboratorio4.X.production.obj
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\Laboratorio4.X.production.obj
 _n1 25 0 COMRAM 1 bssCOMRAM dist/default/production\Laboratorio4.X.production.obj
@@ -466,9 +466,9 @@ __Lsmallconst 800 0 SMALLCONST 0 smallconst dist/default/production\Laboratorio4
 _LATB F8A 0 ABS 0 - dist/default/production\Laboratorio4.X.production.obj
 _LATD F8C 0 ABS 0 - dist/default/production\Laboratorio4.X.production.obj
 _RBPU 7F8F 0 ABS 0 - dist/default/production\Laboratorio4.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\Andres\AppData\Local\Temp\xcAsfcs.obj
+___sp 0 0 STACK 2 stack C:\Users\Andres\AppData\Local\Temp\xcAs2sg.obj
 _main EE2 0 CODE 0 text0 dist/default/production\Laboratorio4.X.production.obj
-start 0 0 CODE 0 init C:\Users\Andres\AppData\Local\Temp\xcAsfcs.obj
+start 0 0 CODE 0 init C:\Users\Andres\AppData\Local\Temp\xcAs2sg.obj
 _LeerTeclado E40 0 CODE 0 text1 dist/default/production\Laboratorio4.X.production.obj
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\Laboratorio4.X.production.obj
 __end_of_RetardoLCD F96 0 CODE 0 text18 dist/default/production\Laboratorio4.X.production.obj
@@ -480,11 +480,11 @@ ___ftdiv@f3 16 0 COMRAM 1 cstackCOMRAM dist/default/production\Laboratorio4.X.pr
 _EscribeLCD_n8 BDA 0 CODE 0 text10 dist/default/production\Laboratorio4.X.production.obj
 __Hpowerup 0 0 CODE 0 powerup dist/default/production\Laboratorio4.X.production.obj
 __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\Laboratorio4.X.production.obj
-__accesstop 60 0 ABS 0 - C:\Users\Andres\AppData\Local\Temp\xcAsfcs.obj
-intlevel0 0 0 CODE 0 text C:\Users\Andres\AppData\Local\Temp\xcAsfcs.obj
-intlevel1 0 0 CODE 0 text C:\Users\Andres\AppData\Local\Temp\xcAsfcs.obj
-intlevel2 0 0 CODE 0 text C:\Users\Andres\AppData\Local\Temp\xcAsfcs.obj
-intlevel3 0 0 CODE 0 text C:\Users\Andres\AppData\Local\Temp\xcAsfcs.obj
+__accesstop 60 0 ABS 0 - C:\Users\Andres\AppData\Local\Temp\xcAs2sg.obj
+intlevel0 0 0 CODE 0 text C:\Users\Andres\AppData\Local\Temp\xcAs2sg.obj
+intlevel1 0 0 CODE 0 text C:\Users\Andres\AppData\Local\Temp\xcAs2sg.obj
+intlevel2 0 0 CODE 0 text C:\Users\Andres\AppData\Local\Temp\xcAs2sg.obj
+intlevel3 0 0 CODE 0 text C:\Users\Andres\AppData\Local\Temp\xcAs2sg.obj
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\Laboratorio4.X.production.obj
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\Laboratorio4.X.production.obj
 __Hifardata 0 0 CODE 0 ifardata dist/default/production\Laboratorio4.X.production.obj
@@ -492,8 +492,8 @@ __Hclrtext 0 0 ABS 0 clrtext dist/default/production\Laboratorio4.X.production.o
 __pidataCOMRAM 1176 0 CODE 0 idataCOMRAM dist/default/production\Laboratorio4.X.production.obj
 ___wmul@multiplicand 3 0 COMRAM 1 cstackCOMRAM dist/default/production\Laboratorio4.X.production.obj
 _ADCON1 FC1 0 ABS 0 - dist/default/production\Laboratorio4.X.production.obj
-___inthi_sp 0 0 STACK 2 stack C:\Users\Andres\AppData\Local\Temp\xcAsfcs.obj
-___intlo_sp 0 0 STACK 2 stack C:\Users\Andres\AppData\Local\Temp\xcAsfcs.obj
+___inthi_sp 0 0 STACK 2 stack C:\Users\Andres\AppData\Local\Temp\xcAs2sg.obj
+___intlo_sp 0 0 STACK 2 stack C:\Users\Andres\AppData\Local\Temp\xcAs2sg.obj
 _DireccionaLCD 1136 0 CODE 0 text16 dist/default/production\Laboratorio4.X.production.obj
 __LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\Laboratorio4.X.production.obj
 _Borrar 110A 0 CODE 0 text13 dist/default/production\Laboratorio4.X.production.obj
@@ -521,7 +521,7 @@ ___fttol@lval B 0 COMRAM 1 cstackCOMRAM dist/default/production\Laboratorio4.X.p
 __end_of_EscribeLCD_n8 CC0 0 CODE 0 text10 dist/default/production\Laboratorio4.X.production.obj
 _Imprimir 81E 0 CODE 0 text4 dist/default/production\Laboratorio4.X.production.obj
 ___ftpack D92 0 CODE 0 text9 dist/default/production\Laboratorio4.X.production.obj
-isa$xinst 0 0 ABS 0 - C:\Users\Andres\AppData\Local\Temp\xcAsfcs.obj
+isa$xinst 0 0 ABS 0 - C:\Users\Andres\AppData\Local\Temp\xcAs2sg.obj
 ___ftpack@arg 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Laboratorio4.X.production.obj
 ___ftpack@exp 4 0 COMRAM 1 cstackCOMRAM dist/default/production\Laboratorio4.X.production.obj
 ___lbdiv@counter 7 0 COMRAM 1 cstackCOMRAM dist/default/production\Laboratorio4.X.production.obj
@@ -556,7 +556,7 @@ __Htext9 0 0 ABS 0 text9 dist/default/production\Laboratorio4.X.production.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\Laboratorio4.X.production.obj
 __Hbigram 0 0 ABS 0 bigram dist/default/production\Laboratorio4.X.production.obj
 __Hbigsfr 0 0 ABS 0 bigsfr dist/default/production\Laboratorio4.X.production.obj
-__smallconst 800 0 SMALLCONST 0 smallconst C:\Users\Andres\AppData\Local\Temp\xcAsfcs.obj
+__smallconst 800 0 SMALLCONST 0 smallconst C:\Users\Andres\AppData\Local\Temp\xcAs2sg.obj
 __Hcomram 0 0 ABS 0 comram dist/default/production\Laboratorio4.X.production.obj
 __Hconfig 30000E 0 CONFIG 4 config dist/default/production\Laboratorio4.X.production.obj
 ___lwtoft 10E6 0 CODE 0 text6 dist/default/production\Laboratorio4.X.production.obj
@@ -668,10 +668,10 @@ ___wmul@multiplier 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Laboratorio
 ___lbdiv@divisor 5 0 COMRAM 1 cstackCOMRAM dist/default/production\Laboratorio4.X.production.obj
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\Laboratorio4.X.production.obj
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\Laboratorio4.X.production.obj
-isa$std 1 0 ABS 0 - C:\Users\Andres\AppData\Local\Temp\xcAsfcs.obj
+isa$std 1 0 ABS 0 - C:\Users\Andres\AppData\Local\Temp\xcAs2sg.obj
 ___lwtoft@c 9 0 COMRAM 1 cstackCOMRAM dist/default/production\Laboratorio4.X.production.obj
-stackhi 0 0 ABS 0 - C:\Users\Andres\AppData\Local\Temp\xcAsfcs.obj
-stacklo 0 0 ABS 0 - C:\Users\Andres\AppData\Local\Temp\xcAsfcs.obj
+stackhi 0 0 ABS 0 - C:\Users\Andres\AppData\Local\Temp\xcAs2sg.obj
+stacklo 0 0 ABS 0 - C:\Users\Andres\AppData\Local\Temp\xcAs2sg.obj
 __Lintcode 0 0 CODE 0 intcode dist/default/production\Laboratorio4.X.production.obj
 __Lintret 0 0 ABS 0 intret dist/default/production\Laboratorio4.X.production.obj
 __Lirdata 0 0 CODE 0 irdata dist/default/production\Laboratorio4.X.production.obj
@@ -716,14 +716,14 @@ __Ltext16 0 0 ABS 0 text16 dist/default/production\Laboratorio4.X.production.obj
 __Ltext17 0 0 ABS 0 text17 dist/default/production\Laboratorio4.X.production.obj
 __Ltext18 0 0 ABS 0 text18 dist/default/production\Laboratorio4.X.production.obj
 __Ltext19 0 0 ABS 0 text19 dist/default/production\Laboratorio4.X.production.obj
-__ramtop 800 0 RAM 0 ramtop C:\Users\Andres\AppData\Local\Temp\xcAsfcs.obj
+__ramtop 800 0 RAM 0 ramtop C:\Users\Andres\AppData\Local\Temp\xcAs2sg.obj
 ___lbmod@dividend 2 0 COMRAM 1 cstackCOMRAM dist/default/production\Laboratorio4.X.production.obj
 __Lpowerup 0 0 CODE 0 powerup dist/default/production\Laboratorio4.X.production.obj
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\Laboratorio4.X.production.obj
 __psmallconst 800 0 SMALLCONST 0 smallconst dist/default/production\Laboratorio4.X.production.obj
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\Laboratorio4.X.production.obj
-___heap_hi 0 0 ABS 0 - C:\Users\Andres\AppData\Local\Temp\xcAsfcs.obj
-___heap_lo 0 0 ABS 0 - C:\Users\Andres\AppData\Local\Temp\xcAsfcs.obj
+___heap_hi 0 0 ABS 0 - C:\Users\Andres\AppData\Local\Temp\xcAs2sg.obj
+___heap_lo 0 0 ABS 0 - C:\Users\Andres\AppData\Local\Temp\xcAs2sg.obj
 __end_of_MensajeLCD_Word FE4 0 CODE 0 text14 dist/default/production\Laboratorio4.X.production.obj
 ___param_bank 0 0 ABS 0 - dist/default/production\Laboratorio4.X.production.obj
 __Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production\Laboratorio4.X.production.obj

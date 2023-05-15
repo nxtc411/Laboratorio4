@@ -31,7 +31,7 @@ void main(void){
     while(1){
         LATB=0B00000000;
         Tecla = LeerTeclado();
-        __delay_ms(50);
+        __delay_ms(200);
         Imprimir(Tecla);
     }}
 

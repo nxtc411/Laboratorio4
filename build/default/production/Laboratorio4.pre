@@ -5915,7 +5915,7 @@ Borrar();
 while(1){
 LATB=0B00000000;
 Tecla = LeerTeclado();
-_delay((unsigned long)((50)*(1000000/4000.0)));
+_delay((unsigned long)((200)*(1000000/4000.0)));
 Imprimir(Tecla);
 }}
 

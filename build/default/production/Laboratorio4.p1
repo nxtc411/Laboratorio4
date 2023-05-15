@@ -4344,9 +4344,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Laboratorio4.c: 33: Tecla = LeerTeclado();
 "33
 [e = _Tecla ( _LeerTeclado ..  ]
-[; ;Laboratorio4.c: 34: _delay((unsigned long)((50)*(1000000/4000.0)));
+[; ;Laboratorio4.c: 34: _delay((unsigned long)((200)*(1000000/4000.0)));
 "34
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
 [; ;Laboratorio4.c: 35: Imprimir(Tecla);
 "35
 [e ( _Imprimir (1 _Tecla ]
