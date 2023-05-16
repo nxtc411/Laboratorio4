@@ -5659,6 +5659,69 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 
+# 4 "C:\Program Files\Microchip\xc8\v2.40\pic\include\__size_t.h"
+typedef unsigned size_t;
+
+# 7 "C:\Program Files\Microchip\xc8\v2.40\pic\include\c90\stdarg.h"
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+
+# 43 "C:\Program Files\Microchip\xc8\v2.40\pic\include\c90\stdio.h"
+struct __prbuf
+{
+char * ptr;
+void (* func)(char);
+};
+
+# 29 "C:\Program Files\Microchip\xc8\v2.40\pic\include\c90\errno.h"
+extern int errno;
+
+# 12 "C:\Program Files\Microchip\xc8\v2.40\pic\include\c90\conio.h"
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+# 23
+extern char * cgets(char *);
+extern void cputs(const char *);
+
+# 88 "C:\Program Files\Microchip\xc8\v2.40\pic\include\c90\stdio.h"
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+
+
+# 180
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+
 # 35 "LibLCDXC8.h"
 unsigned char interfaz=8;
 
@@ -5799,11 +5862,13 @@ break;
 }
 
 
-# 4 "Laboratorio4.c"
+# 5 "Laboratorio4.c"
 #pragma config FOSC=INTOSC_EC
 #pragma config WDT=OFF
 
 unsigned char Tecla = 0;
+float nodec = 0;
+unsigned long partdecl = 0;
 unsigned long r = 0;
 unsigned int n1 = 0;
 unsigned int n2 = 0;
@@ -5829,6 +5894,7 @@ LATB=0B00000000;
 Tecla = LeerTeclado();
 if(Tecla=='C'){
 DireccionaLCD(0xC0);
+
 op = ' ';
 n1c = ' ';
 n2c = ' ';
@@ -5841,44 +5907,42 @@ DireccionaLCD(0xC0);
 DireccionaLCD(0x80);
 }else{
 if(n1c==' '|n2c==' '|op==' '){
-if(op==' ' & (Tecla=='+'|Tecla=='-'|Tecla=='/'|Tecla=='x')){
+if(op==' ' & (Tecla=='+'|Tecla=='-'|Tecla=='/'|Tecla=='x') & n1c != ' ' & n2c ==' '){
 DireccionaLCD(0x81);
 EscribeLCD_c(Tecla);
 op = Tecla;
-}else{
-if(Tecla=='='){
-if(n1c!=' ' & n2c!=' ' & op==' '){
-if(n1c==' '){
+}else if(n1c == ' ' & (Tecla!='+'|Tecla!='-'|Tecla!='/'|Tecla!='x'|Tecla!='='|Tecla!='C')){
 DireccionaLCD(0x80);
 EscribeLCD_c(Tecla);
 n1c=Tecla;
 n1 = Tecla-'0';
-}else{
-if(n2c==' ' & op!=' '){
+}else if(n2c==' ' & op!=' ' & n1c != ' ' & (Tecla!='+'|Tecla!='-'|Tecla!='/'|Tecla!='x'|Tecla!='='|Tecla!='C')){
 DireccionaLCD(0x82);
 EscribeLCD_c(Tecla);
 n2c=Tecla;
 n2 = Tecla-'0';
 }
-}
-
-}
-}else{
-if(Tecla=='='){
-if(n1c!=' ' & n2c!=' ' & op!=' '){
+}else if(Tecla=='='){
 DireccionaLCD(0x83);
 EscribeLCD_c('=');
 switch(op){
-case '+': r = n1 + n2;
+case '+':
+r = n1 + n2;
+nodec = r;
 break;
-case '-': r = n1 - n2;
+case '-':
+r = n1 - n2;
+nodec = r;
 break;
-case 'x': r = n1*n2;
+case 'x':
+r = n1*n2;
+nodec = r;
 break;
 case '/':
 if(n2!=0){
 if(n1!=0){
 r = n1/n2;
+nodec = n1/n2;
 }
 }else{
 if(n1 != 0 & n2 == 0) r = 1000;
@@ -5890,9 +5954,13 @@ r = 0;
 break;
 }
 EscribeLCD_c(r+'0');
-}
 DireccionaLCD(0x84);
-if(r>0x51 & r!=1000 & r !=1001){
+if (nodec-r){
+partdecl = (nodec-r)*100;
+EscribeLCD_c(r+'0');
+EscribeLCD_c('.');
+EscribeLCD_c(partdecl+'0');
+}else if(r>0x51 & r!=1000 & r !=1001){
 EscribeLCD_c('-');
 DireccionaLCD(0x85);
 r = ~r+1;
@@ -5912,7 +5980,7 @@ EscribeLCD_c('I');
 EscribeLCD_c('N');
 EscribeLCD_c('F');
 }else{
-if(r=1001){
+if(r==1001){
 EscribeLCD_c('I');
 EscribeLCD_c('N');
 EscribeLCD_c('D');
@@ -5922,24 +5990,14 @@ EscribeLCD_c(r+'0');
 }
 }
 }
-}
-else{
-if(n1c==' '){
-EscribeLCD_c(Tecla);
-n1c=Tecla;
-n1 = Tecla-'0';
 }else{
-EscribeLCD_c(Tecla);
-n2c=Tecla;
-n2 = Tecla-'0';
-}
-}
-}
-}
+EscribeLCD_c('W');
 }
 _delay((unsigned long)((700)*(1000000/4000.0)));
 }
-}}
+}
+}
+
 
 unsigned char LeerTeclado(void){
 while(RB4==1 && RB5==1 && RB6==1 && RB7==1);
@@ -5966,6 +6024,8 @@ if(RB4==0) return 'C';
 else if(RB5==0) return '0';
 else if(RB6==0) return '=';
 else if(RB7==0) return 'x';
-}}}
+}
+}
+}
 return '?';
 }
