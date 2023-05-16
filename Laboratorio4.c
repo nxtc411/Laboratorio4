@@ -1,10 +1,13 @@
 #include<xc.h>
+#include<stdio.h>
 #define _XTAL_FREQ 1000000
 #include "LibLCDXC8.h"
 #pragma config FOSC=INTOSC_EC
 #pragma config WDT=OFF
 
 unsigned char Tecla = 0;
+unsigned float nodec = 0;
+unsigned long partdecl = 0;
 unsigned long r = 0;
 unsigned int n1 = 0;
 unsigned int n2 = 0;
@@ -71,15 +74,19 @@ void main(void){
                             EscribeLCD_c('=');
                             switch(op){
                             case '+': r = n1 + n2;
+                            nodec = r;
                                 break;
                             case '-': r = n1 - n2;
+                            nodec = r;
                                 break; 
                             case 'x': r = n1*n2;
+                            nodec = r;
                                 break;
                             case '/': 
                                 if(n2!=0){
                                     if(n1!=0){
                                     r = n1/n2;
+                                    nodec = n1/n2;
                                 }
                                 }else{
                                     if(n1 != 0 & n2 == 0) r = 1000;
@@ -89,11 +96,17 @@ void main(void){
                             default:
                                 r = 0;
                                 break;
-                            }         
+                            }
                             EscribeLCD_c(r+'0');
                             }
                             DireccionaLCD(0x84);
-                            if(r>0x51 & r!=1000 & r !=1001){
+                            if (nodec-r){
+                                partdecl = (nodec-r)*100;
+                                EscribeLDC_c(r+'0');
+                                EscribeLCD('.');
+                                EscribeLCD_c(partdecl+'0');
+                            }
+                            else if(r>0x51 & r!=1000 & r !=1001){
                                 EscribeLCD_c('-');
                                 DireccionaLCD(0x85);
                                 r = ~r+1;
