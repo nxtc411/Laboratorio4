@@ -86,6 +86,7 @@ void main(void){
                     }else{
                         if(n1 != 0 & n2 == 0) r = 1000;
                         else if(n1 == 0 & n2 == 0) r = 1001;
+                        nodec = r;
                     }
                     break;
                 default:
@@ -94,7 +95,7 @@ void main(void){
                 }
                 EscribeLCD_c(r+'0');
                 DireccionaLCD(0x84);
-                if (nodec-r){
+                if (nodec-r != 0){
                     partdecl = (nodec-r)*100;
                     EscribeLCD_c(r+'0');
                     EscribeLCD_c('.');
