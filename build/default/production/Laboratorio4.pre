@@ -5876,13 +5876,16 @@ unsigned long m = 0;
 unsigned char op = ' ';
 unsigned char n1c = ' ';
 unsigned char n2c = ' ';
+unsigned int color = 0;
 unsigned char LeerTeclado(void);
+void ColorRGB(void);
 
 void main(void){
 ADCON1=15;
 TRISD=0;
 TRISB=0b11110000;
 TRISE=0;
+TRISC=0;
 RBPU=0;
 InicializaLCD();
 BorraLCD();
@@ -5892,6 +5895,7 @@ BorraLCD();
 while(1){
 LATB=0B00000000;
 Tecla = LeerTeclado();
+ColorRGB();
 if(Tecla=='C'){
 DireccionaLCD(0xC0);
 
@@ -6040,4 +6044,39 @@ else if(RB7==0) return 'x';
 }
 }
 return '?';
+}
+
+void ColorRGB(void){
+LATE2 = 1;
+if(color==9) color = 0;
+switch(color){
+case 1:
+LATC = 0b00000000;
+break;
+case 2:
+LATC = 0b00000101;
+break;
+case 3:
+LATC = 0b00000110;
+break;
+case 4:
+LATC = 0b00000011;
+break;
+case 5:
+LATC = 0b00000010;
+break;
+case 6:
+LATC = 0b00000110;
+break;
+case 7:
+LATC = 0b00000100;
+break;
+case 8:
+LATC = 0b00000111;
+break;
+default:
+LATC = 0b00000000;
+break;
+}
+color += 1;
 }

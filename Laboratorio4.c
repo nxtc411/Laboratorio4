@@ -15,13 +15,16 @@ unsigned long m = 0;
 unsigned char op = ' '; //Operador
 unsigned char n1c = ' '; //Primer numero en caracter
 unsigned char n2c = ' ';  //Segundo numero en caracter
+unsigned int color = 0;
 unsigned char LeerTeclado(void); //Declarar funcion para lectura de matricial
+void ColorRGB(void);
 
 void main(void){
     ADCON1=15; //Deshabilitar funciones analogicas del puerto E
     TRISD=0; //Colocar puerto D como salida
     TRISB=0b11110000; //Colocar puerto B salida/entrada 50/50
     TRISE=0; //Colocar puerto E como salida
+    TRISC=0;
     RBPU=0; //Activar resistencias pull up
     InicializaLCD(); //Funcion para configuracion inicial del LCD
     BorraLCD(); //Limpiar el LCD
@@ -31,6 +34,7 @@ void main(void){
     while(1){
         LATB=0B00000000;
         Tecla = LeerTeclado();
+        ColorRGB();
         if(Tecla=='C'){ //Limpiar la pantalla si se presiona [1][4] 
             DireccionaLCD(0xC0); //Colocar el cursor en la primera posicion de segunda fila
             //Limpiar variables
@@ -179,4 +183,39 @@ unsigned char LeerTeclado(void){
     }
     }
     return '?';
+}
+
+void ColorRGB(void){
+    LATE2 = 1;
+    if(color==9) color = 0;
+    switch(color){
+        case 1:
+            LATC = 0b00000000;
+            break;
+        case 2:
+            LATC = 0b00000101;
+            break;
+        case 3:
+            LATC = 0b00000110;
+            break;
+        case 4:
+            LATC = 0b00000011;
+            break;
+        case 5:
+            LATC = 0b00000010;
+            break;
+        case 6:
+            LATC = 0b00000110;
+            break;
+        case 7:
+            LATC = 0b00000100;
+            break; 
+        case 8:
+            LATC = 0b00000111;
+            break;   
+        default:
+            LATC = 0b00000000;
+            break;
+    }
+    color += 1;
 }
