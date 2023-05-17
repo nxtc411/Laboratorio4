@@ -73,8 +73,6 @@
 [v _LATE0 LATE0 `VEb  1 e 0 @31848 ]
 "10019
 [v _LATE1 LATE1 `VEb  1 e 0 @31849 ]
-"10022
-[v _LATE2 LATE2 `VEb  1 e 0 @31850 ]
 "10376
 [v _RB4 RB4 `VEb  1 e 0 @31756 ]
 "10379
@@ -222,5 +220,5 @@
 "188 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\Laboratorio4.c
 [v _ColorRGB ColorRGB `(v  1 e 1 0 ]
 {
-"221
+"219
 } 0

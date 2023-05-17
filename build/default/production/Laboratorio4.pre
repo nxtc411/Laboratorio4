@@ -6047,36 +6047,35 @@ return '?';
 }
 
 void ColorRGB(void){
-LATE2 = 1;
-if(color==9) color = 0;
+if(color==8) color = 0;
 switch(color){
-case 1:
+case 0:
 LATC = 0b00000000;
 break;
-case 2:
+case 1:
 LATC = 0b00000101;
 break;
-case 3:
+case 2:
 LATC = 0b00000110;
 break;
-case 4:
+case 3:
 LATC = 0b00000011;
 break;
-case 5:
+case 4:
 LATC = 0b00000010;
 break;
-case 6:
+case 5:
 LATC = 0b00000110;
 break;
-case 7:
+case 6:
 LATC = 0b00000100;
 break;
-case 8:
+case 7:
 LATC = 0b00000111;
 break;
 default:
-LATC = 0b00000000;
 break;
 }
 color += 1;
 }
+

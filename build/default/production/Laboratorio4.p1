@@ -44,8 +44,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _RB6 `Vb ~T16 @X0 0 e@31758 ]
 "10385
 [v _RB7 `Vb ~T16 @X0 0 e@31759 ]
-"10022
-[v _LATE2 `Vb ~T0 @X0 0 e@31850 ]
 "3186
 [v _LATC `Vuc ~T0 @X0 0 e@3979 ]
 [; ;xc.h: 18: extern const char __xc8_OPTIM_SPEED;
@@ -4739,121 +4737,115 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Laboratorio4.c: 188: void ColorRGB(void){
 [e :U _ColorRGB ]
 [f ]
-[; ;Laboratorio4.c: 189: LATE2 = 1;
+[; ;Laboratorio4.c: 189: if(color==8) color = 0;
 "189
-[e = _LATE2 -> -> 1 `i `b ]
-[; ;Laboratorio4.c: 190: if(color==9) color = 0;
-"190
-[e $ ! == _color -> -> 9 `i `ui 476  ]
+[e $ ! == _color -> -> 8 `i `ui 476  ]
 [e = _color -> -> 0 `i `ui ]
 [e :U 476 ]
-[; ;Laboratorio4.c: 191: switch(color){
-"191
+[; ;Laboratorio4.c: 190: switch(color){
+"190
 [e $U 478  ]
 {
-[; ;Laboratorio4.c: 192: case 1:
-"192
-[e :U 479 ]
-[; ;Laboratorio4.c: 193: LATC = 0b00000000;
-"193
-[e = _LATC -> -> 0 `i `uc ]
-[; ;Laboratorio4.c: 194: break;
-"194
-[e $U 477  ]
-[; ;Laboratorio4.c: 195: case 2:
-"195
-[e :U 480 ]
-[; ;Laboratorio4.c: 196: LATC = 0b00000101;
-"196
-[e = _LATC -> -> 5 `i `uc ]
-[; ;Laboratorio4.c: 197: break;
-"197
-[e $U 477  ]
-[; ;Laboratorio4.c: 198: case 3:
-"198
-[e :U 481 ]
-[; ;Laboratorio4.c: 199: LATC = 0b00000110;
-"199
-[e = _LATC -> -> 6 `i `uc ]
-[; ;Laboratorio4.c: 200: break;
-"200
-[e $U 477  ]
-[; ;Laboratorio4.c: 201: case 4:
-"201
-[e :U 482 ]
-[; ;Laboratorio4.c: 202: LATC = 0b00000011;
-"202
-[e = _LATC -> -> 3 `i `uc ]
-[; ;Laboratorio4.c: 203: break;
-"203
-[e $U 477  ]
-[; ;Laboratorio4.c: 204: case 5:
-"204
-[e :U 483 ]
-[; ;Laboratorio4.c: 205: LATC = 0b00000010;
-"205
-[e = _LATC -> -> 2 `i `uc ]
-[; ;Laboratorio4.c: 206: break;
-"206
-[e $U 477  ]
-[; ;Laboratorio4.c: 207: case 6:
-"207
-[e :U 484 ]
-[; ;Laboratorio4.c: 208: LATC = 0b00000110;
-"208
-[e = _LATC -> -> 6 `i `uc ]
-[; ;Laboratorio4.c: 209: break;
-"209
-[e $U 477  ]
-[; ;Laboratorio4.c: 210: case 7:
-"210
-[e :U 485 ]
-[; ;Laboratorio4.c: 211: LATC = 0b00000100;
-"211
-[e = _LATC -> -> 4 `i `uc ]
-[; ;Laboratorio4.c: 212: break;
-"212
-[e $U 477  ]
-[; ;Laboratorio4.c: 213: case 8:
-"213
-[e :U 486 ]
-[; ;Laboratorio4.c: 214: LATC = 0b00000111;
-"214
-[e = _LATC -> -> 7 `i `uc ]
-[; ;Laboratorio4.c: 215: break;
-"215
-[e $U 477  ]
-[; ;Laboratorio4.c: 216: default:
-"216
-[e :U 487 ]
-[; ;Laboratorio4.c: 217: LATC = 0b00000000;
-"217
-[e = _LATC -> -> 0 `i `uc ]
-[; ;Laboratorio4.c: 218: break;
-"218
-[e $U 477  ]
-"219
-}
-[; ;Laboratorio4.c: 219: }
-[e $U 477  ]
+[; ;Laboratorio4.c: 191: case 0:
 "191
+[e :U 479 ]
+[; ;Laboratorio4.c: 192: LATC = 0b00000000;
+"192
+[e = _LATC -> -> 0 `i `uc ]
+[; ;Laboratorio4.c: 193: break;
+"193
+[e $U 477  ]
+[; ;Laboratorio4.c: 194: case 1:
+"194
+[e :U 480 ]
+[; ;Laboratorio4.c: 195: LATC = 0b00000101;
+"195
+[e = _LATC -> -> 5 `i `uc ]
+[; ;Laboratorio4.c: 196: break;
+"196
+[e $U 477  ]
+[; ;Laboratorio4.c: 197: case 2:
+"197
+[e :U 481 ]
+[; ;Laboratorio4.c: 198: LATC = 0b00000110;
+"198
+[e = _LATC -> -> 6 `i `uc ]
+[; ;Laboratorio4.c: 199: break;
+"199
+[e $U 477  ]
+[; ;Laboratorio4.c: 200: case 3:
+"200
+[e :U 482 ]
+[; ;Laboratorio4.c: 201: LATC = 0b00000011;
+"201
+[e = _LATC -> -> 3 `i `uc ]
+[; ;Laboratorio4.c: 202: break;
+"202
+[e $U 477  ]
+[; ;Laboratorio4.c: 203: case 4:
+"203
+[e :U 483 ]
+[; ;Laboratorio4.c: 204: LATC = 0b00000010;
+"204
+[e = _LATC -> -> 2 `i `uc ]
+[; ;Laboratorio4.c: 205: break;
+"205
+[e $U 477  ]
+[; ;Laboratorio4.c: 206: case 5:
+"206
+[e :U 484 ]
+[; ;Laboratorio4.c: 207: LATC = 0b00000110;
+"207
+[e = _LATC -> -> 6 `i `uc ]
+[; ;Laboratorio4.c: 208: break;
+"208
+[e $U 477  ]
+[; ;Laboratorio4.c: 209: case 6:
+"209
+[e :U 485 ]
+[; ;Laboratorio4.c: 210: LATC = 0b00000100;
+"210
+[e = _LATC -> -> 4 `i `uc ]
+[; ;Laboratorio4.c: 211: break;
+"211
+[e $U 477  ]
+[; ;Laboratorio4.c: 212: case 7:
+"212
+[e :U 486 ]
+[; ;Laboratorio4.c: 213: LATC = 0b00000111;
+"213
+[e = _LATC -> -> 7 `i `uc ]
+[; ;Laboratorio4.c: 214: break;
+"214
+[e $U 477  ]
+[; ;Laboratorio4.c: 215: default:
+"215
+[e :U 487 ]
+[; ;Laboratorio4.c: 216: break;
+"216
+[e $U 477  ]
+"217
+}
+[; ;Laboratorio4.c: 217: }
+[e $U 477  ]
+"190
 [e :U 478 ]
-[e [\ _color , $ -> -> 1 `i `ui 479
- , $ -> -> 2 `i `ui 480
- , $ -> -> 3 `i `ui 481
- , $ -> -> 4 `i `ui 482
- , $ -> -> 5 `i `ui 483
- , $ -> -> 6 `i `ui 484
- , $ -> -> 7 `i `ui 485
- , $ -> -> 8 `i `ui 486
+[e [\ _color , $ -> -> 0 `i `ui 479
+ , $ -> -> 1 `i `ui 480
+ , $ -> -> 2 `i `ui 481
+ , $ -> -> 3 `i `ui 482
+ , $ -> -> 4 `i `ui 483
+ , $ -> -> 5 `i `ui 484
+ , $ -> -> 6 `i `ui 485
+ , $ -> -> 7 `i `ui 486
  487 ]
-"219
+"217
 [e :U 477 ]
-[; ;Laboratorio4.c: 220: color += 1;
-"220
+[; ;Laboratorio4.c: 218: color += 1;
+"218
 [e =+ _color -> -> 1 `i `ui ]
-[; ;Laboratorio4.c: 221: }
-"221
+[; ;Laboratorio4.c: 219: }
+"219
 [e :UE 475 ]
 }
 [a 1C 72 111 108 97 32 109 117 110 100 111 0 ]
