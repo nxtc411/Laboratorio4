@@ -17,6 +17,7 @@ unsigned char n1c = ' '; //Primer numero en caracter
 unsigned char n2c = ' ';  //Segundo numero en caracter
 unsigned int color = 0;
 unsigned int contador = 0;
+int verificador = 0;
 unsigned char LeerTeclado(void); //Declarar funcion para lectura de matricial
 void ColorRGB(void);
 
@@ -36,12 +37,16 @@ void main(void){
     GIE=1;
     TMR0ON=1;
     //Fin de configuracion para Timer0
+    //Para bajo consumo
+    OSCCON = 0b11000100;
+    //Fin de bajo conumo
     BorraLCD(); //Limpiar el LCD
     MensajeLCD_Word("Hola mundo"); //Escribir mensaje de bienvenida
     __delay_ms(2000); //Retraso para evitar errores
     BorraLCD(); 
     while(1){
         LATB=0B00000000;
+        verificador = 0;
         Tecla = LeerTeclado();
         ColorRGB();
         if(Tecla=='C'){ //Limpiar la pantalla si se presiona [1][4] 
@@ -164,7 +169,8 @@ void main(void){
 
     
 unsigned char LeerTeclado(void){
-    while(RB4==1 && RB5==1 && RB6==1 && RB7==1);//se bloquea al micro mientras no se oprima alg?n bot?n 
+    while(RB4==1 && RB5==1 && RB6==1 && RB7==1);
+    verificador = 1;
     LATB=0b11111110;
     if(RB4==0) return '1';
     else if(RB5==0) return '2';
@@ -229,15 +235,18 @@ void ColorRGB(void){
 
 void __interrupt() ISR(void){
     if(TMR0IF==1){
-        contador = contador +1;
+        if(!verificador) contador = contador +1;
+        else contador = 0;
         TMR0IF=0;
         LATE2 = !LATE2;
         TMR0 = 49911;
     }
     
     if(contador == 10){
-        LATC7 = !LATC7;
-        contador = 0;   
-        asm("IDLE");
+        if(!verificador){   
+            LATC7 = !LATC7;  
+            asm("SLEEP");
+        }
     }
+    
 }
