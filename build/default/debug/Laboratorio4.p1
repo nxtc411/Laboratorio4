@@ -4899,9 +4899,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Laboratorio4.c: 232: LATE2 = !LATE2;
 "232
 [e = _LATE2 ! _LATE2 ]
-[; ;Laboratorio4.c: 233: TMR0 = 49911;
+[; ;Laboratorio4.c: 233: TMR0 = 3036;
 "233
-[e = _TMR0 -> -> 49911 `l `us ]
+[e = _TMR0 -> -> 3036 `i `us ]
 "234
 }
 [e :U 489 ]

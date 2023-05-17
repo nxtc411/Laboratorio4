@@ -30,7 +30,7 @@ void main(void){
     //Timer0 interrupcion
     T0CON=0b10000011;
     TMR0IF=0;
-    TMR0=3036;
+    TMR0=49911;
     TMR0IE=1;
     GIE=1;
     TMR0ON=1;
@@ -230,6 +230,6 @@ void __interrupt() ISR(void){
     if(TMR0IF==1){
         TMR0IF=0;
         LATE2 = !LATE2;
-        TMR0 = 3036;
+        TMR0 = 49911;
     }
 }

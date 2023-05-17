@@ -312,9 +312,9 @@ smallconst 800 81D SMALLCONST 800 0
 bssCOMRAM 1 2D COMRAM 1 1
 text0 81E 1159 CODE 81E 0
 %locals
-dist/default/production\Laboratorio4.X.production.obj
+dist/default/debug\Laboratorio4.X.debug.obj
 C:\Program Files\Microchip\xc8\v2.40\pic\include\proc\pic18f4550.h
-C:\Users\Andres\AppData\Local\Temp\xcAs5qs.as
+C:\Users\Andres\AppData\Local\Temp\xcAsb6o.as
 604 104C 0 CODE 0
 606 104C 0 CODE 0
 609 104C 0 CODE 0
@@ -626,7 +626,7 @@ Laboratorio4.c
 198 EC0 0 CODE 0
 226 EC4 0 CODE 0
 227 EC8 0 CODE 0
-C:\Users\Andres\AppData\Local\Temp\xcAs5qs.as
+C:\Users\Andres\AppData\Local\Temp\xcAsb6o.as
 4322 8 0 CODE 0
 Laboratorio4.c
 229 8 0 CODE 0

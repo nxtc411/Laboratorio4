@@ -6091,6 +6091,6 @@ void __interrupt() ISR(void){
 if(TMR0IF==1){
 TMR0IF=0;
 LATE2 = !LATE2;
-TMR0 = 49911;
+TMR0 = 3036;
 }
 }
