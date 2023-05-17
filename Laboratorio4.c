@@ -24,9 +24,17 @@ void main(void){
     TRISD=0; //Colocar puerto D como salida
     TRISB=0b11110000; //Colocar puerto B salida/entrada 50/50
     TRISE=0; //Colocar puerto E como salida
-    TRISC=0;
+    TRISC=0; //Pines para RGB
     RBPU=0; //Activar resistencias pull up
     InicializaLCD(); //Funcion para configuracion inicial del LCD
+    //Timer0 interrupcion
+    T0CON=0b10000011;
+    TMR0IF=0;
+    TMR0=3036;
+    TMR0IE=1;
+    GIE=1;
+    TMR0ON=1;
+    //Fin de configuracion para Timer0
     BorraLCD(); //Limpiar el LCD
     MensajeLCD_Word("Hola mundo"); //Escribir mensaje de bienvenida
     __delay_ms(2000); //Retraso para evitar errores
@@ -218,3 +226,10 @@ void ColorRGB(void){
     color += 1;
 }
 
+void __interrupt() ISR(void){
+    if(TMR0IF==1){
+        TMR0IF=0;
+        LATE2 = !LATE2;
+        TMR0 = 3036;
+    }
+}

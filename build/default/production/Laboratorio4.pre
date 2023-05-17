@@ -5888,6 +5888,14 @@ TRISE=0;
 TRISC=0;
 RBPU=0;
 InicializaLCD();
+
+T0CON=0b10000011;
+TMR0IF=0;
+TMR0=3036;
+TMR0IE=1;
+GIE=1;
+TMR0ON=1;
+
 BorraLCD();
 MensajeLCD_Word("Hola mundo");
 _delay((unsigned long)((2000)*(1000000/4000.0)));
@@ -6079,3 +6087,10 @@ break;
 color += 1;
 }
 
+void __interrupt() ISR(void){
+if(TMR0IF==1){
+TMR0IF=0;
+LATE2 = !LATE2;
+TMR0 = 3036;
+}
+}
