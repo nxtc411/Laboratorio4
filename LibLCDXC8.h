@@ -241,9 +241,9 @@ void MensajeLCD_Word(char* a){
 //a es una cadena de caracteres guardada en una variable *char
 //Ejemplo: char aux[4]="Hola"; MensajeLCD_Var(aux);
       for(int i = 0; i<16; i++){
-          if(a[i]!=0){
+          //if(a[i]!=0){
             EscribeLCD_c(a[i]);  
-          }
+          //}
     }
 }
     

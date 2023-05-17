@@ -6,12 +6,12 @@
 #pragma config WDT=OFF //Apagar el perro guardian
 
 unsigned char Tecla = 0; //Variable para leer teclado
-float nodec = 0; //Variable para decimales
 unsigned long partdecl = 0; //Parte decimal de un resultado
 unsigned long r = 0; //Resultado entero de las operaciones
 unsigned int n1 = 0; //Primer numero
 unsigned int n2 = 0; //Segundo numero
 unsigned int i = 0;
+unsigned long m = 0;
 unsigned char op = ' '; //Operador
 unsigned char n1c = ' '; //Primer numero en caracter
 unsigned char n2c = ' ';  //Segundo numero en caracter
@@ -40,6 +40,7 @@ void main(void){
             n1 = 0;
             n2 = 0;
             i = 0;
+            partdecl = 0;
             DireccionaLCD(0x80); //Colocar el cursor en la primera posicion de primera fila
             MensajeLCD_Word("                "); //Mandar mensaje vacio para limpiar
             DireccionaLCD(0xC0);
@@ -61,45 +62,55 @@ void main(void){
                     n2c=Tecla;
                     n2 = Tecla-'0';
                 }
-            }else if(Tecla=='='){
+            }else if(Tecla=='=' & n2c!=' ' & op!=' ' & n1c != ' '){
                 DireccionaLCD(0x83);
                 EscribeLCD_c('=');
                 switch(op){
                 case '+': 
                     r = n1 + n2;
-                    nodec = r;
+                    partdecl = r*100;
                     break;
                 case '-':
                     r = n1 - n2;
-                    nodec = r;
+                    partdecl = r*100;
                     break; 
                 case 'x': 
                     r = n1*n2;
-                    nodec = r;
+                    partdecl = r*100;
                     break;
                 case '/': 
                     if(n2!=0){
                         if(n1!=0){
-                        r = n1/n2;
-                        nodec = n1/n2;
+                        r = n1/n2; //Parte entera
+                        partdecl = (n1*100)/n2; //((n1/n2)-r)*10
                         }
                     }else{
                         if(n1 != 0 & n2 == 0) r = 1000;
                         else if(n1 == 0 & n2 == 0) r = 1001;
-                        nodec = r;
+                        partdecl = r*100;
                     }
                     break;
                 default:
                     r = 0;
                     break;
                 }
-                EscribeLCD_c(r+'0');
                 DireccionaLCD(0x84);
-                if (nodec-r != 0){
-                    partdecl = (nodec-r)*100;
-                    EscribeLCD_c(r+'0');
-                    EscribeLCD_c('.');
-                    EscribeLCD_c(partdecl+'0');
+                if ((partdecl-(r*100))!= 0){
+                    for (int i = 0; i < 3; i++) {
+                        r = n1 / n2;
+                        m = n1 % n2;
+                        EscribeLCD_c(r+'0');
+                        if(i == 0 && m != 0) {
+                            EscribeLCD_c(',');
+                        }
+                        
+                        if (m != 0) {
+                            n1 = m * 10;
+                        } else {
+                            break;
+                        }
+                                              
+                     }
                 }else if(r>0x51 & r!=1000 & r !=1001){
                     EscribeLCD_c('-');
                     DireccionaLCD(0x85);
