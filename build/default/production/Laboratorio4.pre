@@ -5902,7 +5902,15 @@ TMR0ON=1;
 OSCCON = 0b11000100;
 
 BorraLCD();
-MensajeLCD_Word("Hola mundo");
+if(TO == 1 && PD == 1){
+BorraLCD();
+MensajeLCD_Word("Energia");
+}else{
+if(POR==0){
+BorraLCD();
+MensajeLCD_Word("MCLR");
+}
+}
 _delay((unsigned long)((2000)*(1000000/4000.0)));
 BorraLCD();
 while(1){
@@ -6106,7 +6114,7 @@ TMR0 = 49911;
 if(contador == 10){
 if(!verificador){
 LATC7 = !LATC7;
-asm("SLEEP");
+asm(" sleep");
 }
 }
 

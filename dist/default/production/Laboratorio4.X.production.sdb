@@ -33,11 +33,11 @@
 [v ___omul __omul `(ul  1 e 4 0 ]
 "24 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\Laboratorio4.c
 [v _main main `(v  1 e 1 0 ]
-"171
+"179
 [v _LeerTeclado LeerTeclado `(uc  1 e 1 0 ]
-"203
+"211
 [v _ColorRGB ColorRGB `(v  1 e 1 0 ]
-"236
+"244
 [v _ISR ISR `IIH(v  1 e 1 0 ]
 "59 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\LibLCDXC8.h
 [v _EnviaDato EnviaDato `(v  1 e 1 0 ]
@@ -87,6 +87,10 @@
 [v _LATE1 LATE1 `VEb  1 e 0 @31849 ]
 "10022
 [v _LATE2 LATE2 `VEb  1 e 0 @31850 ]
+"10247
+[v _PD PD `VEb  1 e 0 @32386 ]
+"10301
+[v _POR POR `VEb  1 e 0 @32385 ]
 "10376
 [v _RB4 RB4 `VEb  1 e 0 @31756 ]
 "10379
@@ -103,6 +107,8 @@
 [v _TMR0IF TMR0IF `VEb  1 e 0 @32658 ]
 "10826
 [v _TMR0ON TMR0ON `VEb  1 e 0 @32431 ]
+"10871
+[v _TO TO `VEb  1 e 0 @32387 ]
 "8 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\Laboratorio4.c
 [v _Tecla Tecla `uc  1 e 1 0 ]
 "9
@@ -132,9 +138,9 @@
 "24
 [v _main main `(v  1 e 1 0 ]
 {
-"117
+"125
 [v main@i i `i  1 a 2 17 ]
-"168
+"176
 } 0
 "15 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
@@ -196,10 +202,10 @@
 [v EscribeLCD_c@a a `uc  1 a 1 3 ]
 "148
 } 0
-"171 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\Laboratorio4.c
+"179 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\Laboratorio4.c
 [v _LeerTeclado LeerTeclado `(uc  1 e 1 0 ]
 {
-"201
+"209
 } 0
 "71 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\LibLCDXC8.h
 [v _InicializaLCD InicializaLCD `(v  1 e 1 0 ]
@@ -241,13 +247,13 @@
 {
 "111
 } 0
-"203 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\Laboratorio4.c
+"211 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\Laboratorio4.c
 [v _ColorRGB ColorRGB `(v  1 e 1 0 ]
 {
-"234
+"242
 } 0
-"236
+"244
 [v _ISR ISR `IIH(v  1 e 1 0 ]
 {
-"252
+"260
 } 0

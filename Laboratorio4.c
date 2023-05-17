@@ -41,7 +41,15 @@ void main(void){
     OSCCON = 0b11000100;
     //Fin de bajo conumo
     BorraLCD(); //Limpiar el LCD
-    MensajeLCD_Word("Hola mundo"); //Escribir mensaje de bienvenida
+    if(TO == 1 && PD == 1){
+        BorraLCD();
+        MensajeLCD_Word("Energia");
+    }else{
+        if(POR==0){
+        BorraLCD();
+        MensajeLCD_Word("MCLR");
+    }
+    }
     __delay_ms(2000); //Retraso para evitar errores
     BorraLCD(); 
     while(1){
@@ -245,7 +253,7 @@ void __interrupt() ISR(void){
     if(contador == 10){
         if(!verificador){   
             LATC7 = !LATC7;  
-            asm("SLEEP");
+            SLEEP();
         }
     }
     
