@@ -5877,6 +5877,7 @@ unsigned char op = ' ';
 unsigned char n1c = ' ';
 unsigned char n2c = ' ';
 unsigned int color = 0;
+unsigned int contador = 0;
 unsigned char LeerTeclado(void);
 void ColorRGB(void);
 
@@ -6089,8 +6090,15 @@ color += 1;
 
 void __interrupt() ISR(void){
 if(TMR0IF==1){
+contador = contador +1;
 TMR0IF=0;
 LATE2 = !LATE2;
 TMR0 = 49911;
+}
+
+if(contador == 10){
+LATC7 = !LATC7;
+contador = 0;
+asm("IDLE");
 }
 }

@@ -16,6 +16,7 @@ unsigned char op = ' '; //Operador
 unsigned char n1c = ' '; //Primer numero en caracter
 unsigned char n2c = ' ';  //Segundo numero en caracter
 unsigned int color = 0;
+unsigned int contador = 0;
 unsigned char LeerTeclado(void); //Declarar funcion para lectura de matricial
 void ColorRGB(void);
 
@@ -228,8 +229,15 @@ void ColorRGB(void){
 
 void __interrupt() ISR(void){
     if(TMR0IF==1){
+        contador = contador +1;
         TMR0IF=0;
         LATE2 = !LATE2;
         TMR0 = 49911;
+    }
+    
+    if(contador == 10){
+        LATC7 = !LATC7;
+        contador = 0;   
+        asm("IDLE");
     }
 }
