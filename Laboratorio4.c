@@ -1,5 +1,6 @@
 #include<xc.h> //Libreria para PIC
 #include<stdio.h> //Libreria adicional para manejo de decimales
+#include<stdbool.h>
 #define _XTAL_FREQ 1000000 //Frecuencia de reloj
 #include "LibLCDXC8.h" //Libreria para uso de LCD
 #pragma config FOSC=INTOSC_EC //Sentencia para usar oscilador externo
@@ -21,6 +22,7 @@ unsigned char n2c = ' ';  //Segundo numero en caracter
 unsigned int color = 0;
 unsigned int contador = 0;
 int verificador = 0;
+bool flag = false;
 unsigned char LeerTeclado(void); //Declarar funcion para lectura de matricial
 void ColorRGB(void);
 
@@ -29,11 +31,11 @@ void main(void){
     TRISD=0; //Colocar puerto D como salida
     TRISB=0b11110000; //Colocar puerto B salida/entrada 50/50
     TRISE=0; //Colocar puerto E como salida
-    TRISC=0; //Pines para RGB
+    TRISC=0b11110000; //Pines para RGB
     RBPU=0; //Activar resistencias pull up
     InicializaLCD(); //Funcion para configuracion inicial del LCD
     //Timer0 interrupcion
-    T0CON=0b10000011;
+    T0CON=0b10000010;
     TMR0IF=0;
     TMR0=49911;
     TMR0IE=1;
@@ -44,24 +46,15 @@ void main(void){
     OSCCON = 0b11000100;
     //Fin de bajo conumo
     BorraLCD(); //Limpiar el LCD
-    if(TO == 1 && PD == 0){
+    if(TO == 1 & RI == 1){
         BorraLCD();
-        EscribeLCD_c('E');
-        EscribeLCD_c('N');
-        EscribeLCD_c('E');
-        EscribeLCD_c('R');
-        EscribeLCD_c('G');
-        EscribeLCD_c('I');
-        EscribeLCD_c('A');
-        //MensajeLCD_Word("Energia");
+        RI = 0;
+        MensajeLCD_Word("Energia");
     }else{
-        if(POR==0){
+        if(TO == 1 | PD == 0 ){ 
         BorraLCD();
-        EscribeLCD_c('M');
-        EscribeLCD_c('C');
-        EscribeLCD_c('L');
-        EscribeLCD_c('R');
-    }
+        MensajeLCD_Word("MCLR");
+        }
     }
     __delay_ms(2000); //Retraso para evitar errores
     BorraLCD(); 
@@ -80,29 +73,32 @@ void main(void){
             n2 = 0;
             i = 0;
             partdecl = 0;
+            flag =  false;
             DireccionaLCD(0x80); //Colocar el cursor en la primera posicion de primera fila
             MensajeLCD_Word("                "); //Mandar mensaje vacio para limpiar
             DireccionaLCD(0xC0);
             DireccionaLCD(0x80);
         }else{
             if(n1c==' '|n2c==' '|op==' '){ //Funciones si no se ha recibido nada
-                if(op==' ' & (Tecla=='+'|Tecla=='-'|Tecla=='/'|Tecla=='x') & n1c != ' ' & n2c ==' '){
-                DireccionaLCD(0x81);
-                EscribeLCD_c(Tecla);
-                op = Tecla;
-                }else if(n1c == ' ' & (Tecla!='+'|Tecla!='-'|Tecla!='/'|Tecla!='x'|Tecla!='='|Tecla!='C')){
+                if(op==' ' & (Tecla=='+'|Tecla=='-'|Tecla=='/'|Tecla=='x'|Tecla!='=') & n1c != ' ' & n2c ==' '){
+                    DireccionaLCD(0x81);
+                    EscribeLCD_c(Tecla);
+                    op = Tecla;                    
+                    if(Tecla=='!') n2c = 'A';
+                }else if(n1c == ' ' & (Tecla!='+'|Tecla!='-'|Tecla!='/'|Tecla!='x'|Tecla!='='|Tecla!='C'|Tecla!='!'|Tecla!='^'|Tecla!='=') & op == ' '){
                     DireccionaLCD(0x80);  
                     EscribeLCD_c(Tecla);
                     n1c=Tecla;
                     n1 = Tecla-'0';
-                }else if(n2c==' ' & op!=' ' & n1c != ' ' & (Tecla!='+'|Tecla!='-'|Tecla!='/'|Tecla!='x'|Tecla!='='|Tecla!='C')){
+                }else if(n2c==' ' & op!=' ' & op!='!' & n1c != ' ' & (Tecla!='+'|Tecla!='-'|Tecla!='/'|Tecla!='x'|Tecla!='='|Tecla!='C'|Tecla!='!'|Tecla!='^'|Tecla!='=')){
                     DireccionaLCD(0x82);
                     EscribeLCD_c(Tecla);
                     n2c=Tecla;
                     n2 = Tecla-'0';
                 }
-            }else if(Tecla=='=' & n2c!=' ' & op!=' ' & n1c != ' '){
-                DireccionaLCD(0x83);
+            }else if(Tecla=='=' & n1c != ' ' & op!=' ' & n2c!=' '){
+                if(op=='!') DireccionaLCD(0x82);
+                else DireccionaLCD(0x83);
                 EscribeLCD_c('=');
                 switch(op){
                 case '+': 
@@ -129,20 +125,35 @@ void main(void){
                         partdecl = r*100;
                     }
                     break;
+                case '!':
+                    r = n1;
+                    for(n1;n1>1;n1--){
+                        r = r * (n1-1);
+                    }
+                    partdecl = r*100;
+                    break;
+                case '^':
+                    r = n1;
+                    n2 = n2-1;
+                    for(n2;n2>0;n2--){
+                        r = r * n1;
+                    }
+                    partdecl = r*100;
+                    break;
                 default:
                     r = 0;
                     break;
                 }
-                DireccionaLCD(0x84);
-                if ((partdecl-(r*100))!= 0){
+                if(op=='!') DireccionaLCD(0x83);
+                else DireccionaLCD(0x84);
+                if ((partdecl-(r*100))!= 0 & (partdecl-(r*100))>0){
                     for (int i = 0; i < 3; i++) {
                         r = n1 / n2;
                         m = n1 % n2;
                         EscribeLCD_c(r+'0');
                         if(i == 0 && m != 0) {
                             EscribeLCD_c(',');
-                        }
-                        
+                        }                        
                         if (m != 0) {
                             n1 = m * 10;
                         } else {
@@ -150,30 +161,33 @@ void main(void){
                         }
                                               
                      }
-                }else if(r>0x51 & r!=1000 & r !=1001){
+                }else if(r>0x51 & r!=1000 & r !=1001 & op=='-'){
                     EscribeLCD_c('-');
                     DireccionaLCD(0x85);
                     r = ~r+1;
                     EscribeLCD_c(r+'0'); 
                 }else{
-                    if(r>0xA & r!=1000 & r !=1001){
-                        do{
-                            i = i+1;
-                            r = r - 10;
-                        }while(r>0xA);
-                        EscribeLCD_c(i+'0');
-                        DireccionaLCD(0x85);
-                        EscribeLCD_c(r+'0'); 
+                    if(r==1000){
+                        MensajeLCD_Word("Inf.");
                     }else{
-                        if(r==1000){
-                            EscribeLCD_c('I');
-                            EscribeLCD_c('N');
-                            EscribeLCD_c('F');
+                        if(r==1001){
+                            MensajeLCD_Word("Ind.");
                         }else{
-                            if(r==1001){
-                                EscribeLCD_c('I');
-                                EscribeLCD_c('N');
-                                EscribeLCD_c('D');
+                            if(r>=0xA & r!=1000 & r !=1001){
+                                for(int j=9;j>=0;j--){
+                                    partdecl = 10;
+                                    for(int k=j-1;k>0;k--){   
+                                        partdecl = partdecl*10;
+                                    }
+                                    if(r/partdecl>0){
+                                        flag = true;
+                                        EscribeLCD_c(r/partdecl+48);
+                                        r=r%partdecl;
+                                    }else if( (r/partdecl)==0 && flag){
+                                        if(r<10) EscribeLCD_c(r+48);
+                                        else EscribeLCD_c(48);
+                                    }
+                                }
                             }else{
                                 EscribeLCD_c(r+'0'); 
                             }
@@ -181,7 +195,7 @@ void main(void){
                     }
                 }
             }else{
-                EscribeLCD_c('W');
+                EscribeLCD_c(' ');
             }
         __delay_ms(700);
         }
@@ -196,13 +210,15 @@ unsigned char LeerTeclado(void){
     if(RB4==0) return '1';
     else if(RB5==0) return '2';
     else if(RB6==0) return '3';
-    else if(RB7==0) return '+';
+    else if(RB7==0 & RC6==0) return '+';
+    else if(RB7==0 & RC6==1) return '!';
     else{
     LATB=0b11111101;
     if(RB4==0) return '4';
     else if(RB5==0) return '5';
     else if(RB6==0) return '6';
-    else if(RB7==0) return '-';
+    else if(RB7==0 & RC6==0) return '-';
+    else if(RB7==0 & RC6==1) return '^';
     else{
     LATB=0b11111011;
     if(RB4==0) return '7';
@@ -263,10 +279,12 @@ void __interrupt() ISR(void){
         TMR0 = 49911;
     }
     
-    if(contador == 10){
+    if(contador == 20){
         if(!verificador){   
-            LATC7 = !LATC7;  
+            BorraLCD();
+            MensajeLCD_Word("En Resposo");
             SLEEP();
+            while(1);
         }
     }
     
