@@ -48,6 +48,7 @@ void EscribeLCD_c(unsigned char);
 //void EscribeLCD_d(double, unsigned char, unsigned char);
 void MensajeLCD_Word(char *);
 void DireccionaLCD(unsigned char);
+//void NuevoCaracter(unsigned char, unsigned char);
 //void FijaCursorLCD(unsigned char,unsigned char);
 //void DesplazaPantallaD(void);
 //void DesplazaPantallaI(void);
@@ -136,7 +137,12 @@ void ComandoLCD(unsigned char a){
 		RetardoLCD(4);
 	}		
 }
-*/	
+*/
+
+//void NuevoCaracter(unsigned char ubicacion, unsigned char mapeo[]){
+    
+//}
+
 void EscribeLCD_c(unsigned char a){
 //Función que escribe un caracter en la pantalla
 //a es un valor en codigo ascii

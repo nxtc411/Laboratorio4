@@ -5740,9 +5740,7 @@ void EscribeLCD_c(unsigned char);
 void MensajeLCD_Word(char *);
 void DireccionaLCD(unsigned char);
 
-
-
-
+# 56
 void ConfiguraLCD(unsigned char a){
 if(a==4 | a ==8)
 interfaz=a;
@@ -5808,7 +5806,7 @@ HabilitaLCD();
 RetardoLCD(2);
 }
 
-# 140
+# 146
 void EscribeLCD_c(unsigned char a){
 
 
@@ -5819,7 +5817,7 @@ HabilitaLCD();
 RetardoLCD(4);
 }
 
-# 239
+# 245
 void MensajeLCD_Word(char* a){
 
 
@@ -5840,7 +5838,7 @@ HabilitaLCD();
 RetardoLCD(4);
 }
 
-# 286
+# 292
 void RetardoLCD(unsigned char a){
 switch(a){
 case 1: _delay((unsigned long)((15)*(1000000/4000.0)));
@@ -5865,6 +5863,9 @@ break;
 # 5 "Laboratorio4.c"
 #pragma config FOSC=INTOSC_EC
 #pragma config WDT=OFF
+#pragma config PBADEN=OFF
+#pragma config LVP=OFF
+#pragma config MCLRE=ON
 
 unsigned char Tecla = 0;
 unsigned long partdecl = 0;
@@ -5902,13 +5903,23 @@ TMR0ON=1;
 OSCCON = 0b11000100;
 
 BorraLCD();
-if(TO == 1 && PD == 1){
+if(TO == 1 && PD == 0){
 BorraLCD();
-MensajeLCD_Word("Energia");
+EscribeLCD_c('E');
+EscribeLCD_c('N');
+EscribeLCD_c('E');
+EscribeLCD_c('R');
+EscribeLCD_c('G');
+EscribeLCD_c('I');
+EscribeLCD_c('A');
+
 }else{
 if(POR==0){
 BorraLCD();
-MensajeLCD_Word("MCLR");
+EscribeLCD_c('M');
+EscribeLCD_c('C');
+EscribeLCD_c('L');
+EscribeLCD_c('R');
 }
 }
 _delay((unsigned long)((2000)*(1000000/4000.0)));

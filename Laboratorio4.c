@@ -3,7 +3,10 @@
 #define _XTAL_FREQ 1000000 //Frecuencia de reloj
 #include "LibLCDXC8.h" //Libreria para uso de LCD
 #pragma config FOSC=INTOSC_EC //Sentencia para usar oscilador externo
-#pragma config WDT=OFF //Apagar el perro guardian
+#pragma config WDT=OFF //Apagar el perro guardian 
+#pragma config PBADEN=OFF
+#pragma config LVP=OFF
+#pragma config MCLRE=ON
 
 unsigned char Tecla = 0; //Variable para leer teclado
 unsigned long partdecl = 0; //Parte decimal de un resultado
@@ -41,13 +44,23 @@ void main(void){
     OSCCON = 0b11000100;
     //Fin de bajo conumo
     BorraLCD(); //Limpiar el LCD
-    if(TO == 1 && PD == 1){
+    if(TO == 1 && PD == 0){
         BorraLCD();
-        MensajeLCD_Word("Energia");
+        EscribeLCD_c('E');
+        EscribeLCD_c('N');
+        EscribeLCD_c('E');
+        EscribeLCD_c('R');
+        EscribeLCD_c('G');
+        EscribeLCD_c('I');
+        EscribeLCD_c('A');
+        //MensajeLCD_Word("Energia");
     }else{
         if(POR==0){
         BorraLCD();
-        MensajeLCD_Word("MCLR");
+        EscribeLCD_c('M');
+        EscribeLCD_c('C');
+        EscribeLCD_c('L');
+        EscribeLCD_c('R');
     }
     }
     __delay_ms(2000); //Retraso para evitar errores

@@ -31,29 +31,29 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul64.c
 [v ___omul __omul `(ul  1 e 4 0 ]
-"24 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\Laboratorio4.c
+"27 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\Laboratorio4.c
 [v _main main `(v  1 e 1 0 ]
-"179
+"192
 [v _LeerTeclado LeerTeclado `(uc  1 e 1 0 ]
-"211
+"224
 [v _ColorRGB ColorRGB `(v  1 e 1 0 ]
-"244
+"257
 [v _ISR ISR `IIH(v  1 e 1 0 ]
-"59 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\LibLCDXC8.h
+"60 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\LibLCDXC8.h
 [v _EnviaDato EnviaDato `(v  1 e 1 0 ]
-"71
+"72
 [v _InicializaLCD InicializaLCD `(v  1 e 1 0 ]
-"105
+"106
 [v _HabilitaLCD HabilitaLCD `(v  1 e 1 0 ]
-"112
+"113
 [v _BorraLCD BorraLCD `(v  1 e 1 0 ]
-"140
+"146
 [v _EscribeLCD_c EscribeLCD_c `(v  1 e 1 0 ]
-"239
+"245
 [v _MensajeLCD_Word MensajeLCD_Word `(v  1 e 1 0 ]
-"250
+"256
 [v _DireccionaLCD DireccionaLCD `(v  1 e 1 0 ]
-"286
+"292
 [v _RetardoLCD RetardoLCD `(v  1 e 1 0 ]
 "3074 C:\Program Files\Microchip\xc8\v2.40\pic\include\proc\pic18f4550.h
 [v _LATB LATB `VEuc  1 e 1 @3978 ]
@@ -109,38 +109,38 @@
 [v _TMR0ON TMR0ON `VEb  1 e 0 @32431 ]
 "10871
 [v _TO TO `VEb  1 e 0 @32387 ]
-"8 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\Laboratorio4.c
+"11 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\Laboratorio4.c
 [v _Tecla Tecla `uc  1 e 1 0 ]
-"9
-[v _partdecl partdecl `ul  1 e 4 0 ]
-"10
-[v _r r `ul  1 e 4 0 ]
-"11
-[v _n1 n1 `ui  1 e 2 0 ]
 "12
-[v _n2 n2 `ui  1 e 2 0 ]
+[v _partdecl partdecl `ul  1 e 4 0 ]
 "13
-[v _i i `ui  1 e 2 0 ]
+[v _r r `ul  1 e 4 0 ]
 "14
-[v _m m `ul  1 e 4 0 ]
+[v _n1 n1 `ui  1 e 2 0 ]
 "15
-[v _op op `uc  1 e 1 0 ]
+[v _n2 n2 `ui  1 e 2 0 ]
 "16
-[v _n1c n1c `uc  1 e 1 0 ]
+[v _i i `ui  1 e 2 0 ]
 "17
-[v _n2c n2c `uc  1 e 1 0 ]
+[v _m m `ul  1 e 4 0 ]
 "18
-[v _color color `ui  1 e 2 0 ]
+[v _op op `uc  1 e 1 0 ]
 "19
-[v _contador contador `ui  1 e 2 0 ]
+[v _n1c n1c `uc  1 e 1 0 ]
 "20
+[v _n2c n2c `uc  1 e 1 0 ]
+"21
+[v _color color `ui  1 e 2 0 ]
+"22
+[v _contador contador `ui  1 e 2 0 ]
+"23
 [v _verificador verificador `i  1 e 2 0 ]
-"24
+"27
 [v _main main `(v  1 e 1 0 ]
 {
-"125
+"138
 [v main@i i `i  1 a 2 17 ]
-"176
+"189
 } 0
 "15 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
@@ -184,76 +184,76 @@
 [v ___lmul@multiplicand multiplicand `ul  1 p 4 4 ]
 "129
 } 0
-"239 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\LibLCDXC8.h
+"245 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\LibLCDXC8.h
 [v _MensajeLCD_Word MensajeLCD_Word `(v  1 e 1 0 ]
 {
-"243
+"249
 [v MensajeLCD_Word@i i `i  1 a 2 6 ]
-"239
+"245
 [v MensajeLCD_Word@a a `*.31uc  1 p 1 4 ]
-"248
+"254
 } 0
-"140
+"146
 [v _EscribeLCD_c EscribeLCD_c `(v  1 e 1 0 ]
 {
 [v EscribeLCD_c@a a `uc  1 a 1 wreg ]
 [v EscribeLCD_c@a a `uc  1 a 1 wreg ]
-"144
+"150
 [v EscribeLCD_c@a a `uc  1 a 1 3 ]
-"148
+"154
 } 0
-"179 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\Laboratorio4.c
+"192 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\Laboratorio4.c
 [v _LeerTeclado LeerTeclado `(uc  1 e 1 0 ]
 {
-"209
+"222
 } 0
-"71 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\LibLCDXC8.h
+"72 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\LibLCDXC8.h
 [v _InicializaLCD InicializaLCD `(v  1 e 1 0 ]
 {
-"104
+"105
 } 0
-"112
+"113
 [v _BorraLCD BorraLCD `(v  1 e 1 0 ]
 {
-"118
+"119
 } 0
-"250
+"256
 [v _DireccionaLCD DireccionaLCD `(v  1 e 1 0 ]
 {
 [v DireccionaLCD@a a `uc  1 a 1 wreg ]
 [v DireccionaLCD@a a `uc  1 a 1 wreg ]
-"253
+"259
 [v DireccionaLCD@a a `uc  1 a 1 3 ]
-"257
+"263
 } 0
-"59
+"60
 [v _EnviaDato EnviaDato `(v  1 e 1 0 ]
 {
 [v EnviaDato@a a `uc  1 a 1 wreg ]
 [v EnviaDato@a a `uc  1 a 1 wreg ]
 [v EnviaDato@a a `uc  1 a 1 2 ]
-"70
+"71
 } 0
-"286
+"292
 [v _RetardoLCD RetardoLCD `(v  1 e 1 0 ]
 {
 [v RetardoLCD@a a `uc  1 a 1 wreg ]
 [v RetardoLCD@a a `uc  1 a 1 wreg ]
 [v RetardoLCD@a a `uc  1 a 1 1 ]
-"304
+"310
 } 0
-"105
+"106
 [v _HabilitaLCD HabilitaLCD `(v  1 e 1 0 ]
 {
-"111
+"112
 } 0
-"211 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\Laboratorio4.c
+"224 C:\Users\Andres\MPLABXProjects\Laboratorio4.X\Laboratorio4.c
 [v _ColorRGB ColorRGB `(v  1 e 1 0 ]
 {
-"242
+"255
 } 0
-"244
+"257
 [v _ISR ISR `IIH(v  1 e 1 0 ]
 {
-"260
+"273
 } 0
